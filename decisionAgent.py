@@ -1,16 +1,10 @@
 """
 decisionAgent.py
 
-LLM-based decision agent that reasons over detected incidents
+LLM-based agent that analyzes detected incidents
 and proposes support, engineering, or documentation actions.
-
-This is an agentic reasoning step, not a chatbot.
 """
-
-# ---------------------------------------------------
-# Imports
-# ---------------------------------------------------
-
+#hi
 import json
 from typing import List, Dict
 from dotenv import load_dotenv
@@ -18,41 +12,31 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
-# ---------------------------------------------------
-# Environment Setup
-# ---------------------------------------------------
 
+# Load environment variables (API keys)ssss
 load_dotenv()
 
-# ---------------------------------------------------
-# LLM Initialization
-# ---------------------------------------------------
 
+# Initialize LLM
 llm = ChatOpenAI(model="gpt-4o-mini")
 
-# ---------------------------------------------------
-# File Paths
-# ---------------------------------------------------
 
-INCIDENTS_FILE_PATH = "D:\PythonProject\CC_Hackathon_B108\data\incidents.json"
+# File paths
+INCIDENTS_FILE_PATH = "D:\\PythonProject\\CC_Hackathon_B108\\data\\incidents.json"
 OUTPUT_FILE_PATH = "actionPlans.json"
 
-# ---------------------------------------------------
-# Helper Functions
-# ---------------------------------------------------
 
 def loadIncidents() -> List[Dict]:
-    """Load detected incidents from JSON file."""
+    """Load detected incidents from file."""
     with open(INCIDENTS_FILE_PATH, "r") as file:
         return json.load(file)
 
 
 def buildReasoningPrompt(incident: Dict) -> List:
     """
-    Build a structured prompt for LLM reasoning.
-    Handles partial incident data safely.
+    Build a structured prompt for the LLM.
+    Handles missing or partial incident data safely.
     """
-
     from datetime import datetime
 
     firstSeen = datetime.fromisoformat(incident["firstSeen"])
@@ -63,14 +47,8 @@ def buildReasoningPrompt(incident: Dict) -> List:
 You are an autonomous support operations agent for a SaaS platform
 migrating from hosted to headless architecture.
 
-Some incident data may be incomplete or missing.
+Some incident data may be incomplete.
 Reason conservatively and surface uncertainty.
-
-Your task:
-1. Diagnose the most likely root cause of the incident
-2. Propose an action plan with confidence level
-3. Clearly state assumptions and uncertainty
-4. Respect safety boundaries (no destructive actions)
 
 Respond ONLY in valid JSON.
 """
@@ -84,7 +62,7 @@ Incident details:
 - Time Window (minutes): {timeWindowMinutes}
 - Incident Status: {incident["status"]}
 
-Return JSON with the following structure:
+Return JSON in this format:
 {{
   "incidentId": "{incident["incidentId"]}",
   "rootCauseHypothesis": "...",
@@ -107,32 +85,27 @@ Return JSON with the following structure:
         HumanMessage(content=humanPrompt)
     ]
 
+
 def reasonAboutIncident(incident: Dict) -> Dict:
-    """Invoke LLM to reason about a single incident."""
+    """Run LLM reasoning for a single incident."""
     messages = buildReasoningPrompt(incident)
     response = llm.invoke(messages)
 
     try:
         return json.loads(response.content)
     except json.JSONDecodeError:
-        # Fail safely with traceable output
         return {
             "incidentId": incident["incidentId"],
-            "error": "LLM returned invalid JSON",
+            "error": "Invalid JSON returned by LLM",
             "rawResponse": response.content
         }
 
 
-# ---------------------------------------------------
-# Main Agent Loop
-# ---------------------------------------------------
-
 def runDecisionAgent():
     """
-    Main observe → reason → decide loop.
-    Acts on incidents, not raw tickets.
+    Main agent loop:
+    observe incidents → reason → produce action plans
     """
-
     incidents = loadIncidents()
     actionPlans = []
 
@@ -146,10 +119,6 @@ def runDecisionAgent():
 
     print(f"Decision agent completed. {len(actionPlans)} action plans generated.")
 
-
-# ---------------------------------------------------
-# Entry Point
-# ---------------------------------------------------
 
 if __name__ == "__main__":
     runDecisionAgent()
