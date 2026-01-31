@@ -1,0 +1,402 @@
+[
+  {
+    "merchantId": "M-001",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-002",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-003",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-004",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-005",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-006",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-007",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-008",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-009",
+    "migrationStage": "mid",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-010",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-011",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-012",
+    "migrationStage": "mid",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-013",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-014",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-015",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-016",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-017",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-018",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-019",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-020",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-021",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-022",
+    "migrationStage": "mid",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-023",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-024",
+    "migrationStage": "mid",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-025",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-026",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-027",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-028",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-029",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-030",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-031",
+    "migrationStage": "mid",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-032",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-033",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-034",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-035",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-036",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-037",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-038",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-039",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-040",
+    "migrationStage": "post",
+    "frontendVersion": "v2",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-041",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-042",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-043",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-044",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": true
+  },
+  {
+    "merchantId": "M-045",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-046",
+    "migrationStage": "pre",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-047",
+    "migrationStage": "mid",
+    "frontendVersion": "v1",
+    "backendVersion": "v2",
+    "webhooksConfigured": false,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-048",
+    "migrationStage": "pre",
+    "frontendVersion": "v2",
+    "backendVersion": "v2",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-049",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": true,
+    "apiKeyValid": false
+  },
+  {
+    "merchantId": "M-050",
+    "migrationStage": "post",
+    "frontendVersion": "v1",
+    "backendVersion": "v1",
+    "webhooksConfigured": false,
+    "apiKeyValid": true
+  }
+]

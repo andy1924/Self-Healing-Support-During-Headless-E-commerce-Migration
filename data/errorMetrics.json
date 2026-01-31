@@ -1,0 +1,23 @@
+[
+  {
+    "service": "checkoutApi",
+    "errorCode": 500,
+    "countLast15Min": 34,
+    "merchantsAffected": 16,
+    "timestamp": "2026-01-31T21:47:24.275901"
+  },
+  {
+    "service": "authApi",
+    "errorCode": 403,
+    "countLast15Min": 25,
+    "merchantsAffected": 10,
+    "timestamp": "2026-01-31T21:47:24.275988"
+  },
+  {
+    "service": "webhookService",
+    "errorCode": 400,
+    "countLast15Min": 22,
+    "merchantsAffected": 17,
+    "timestamp": "2026-01-31T21:47:24.275993"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "knownIssueId": "KI-001",
+    "pattern": "frontendV2 + backendV1",
+    "impact": "checkoutFailure",
+    "rootCause": "versionMismatch",
+    "recommendedAction": "delayFrontendRollout"
+  },
+  {
+    "knownIssueId": "KI-002",
+    "pattern": "webhooksConfigured=false",
+    "impact": "orderEventsMissing",
+    "rootCause": "merchantConfigError",
+    "recommendedAction": "guideWebhookSetup"
+  }
+]

@@ -1,0 +1,757 @@
+[
+  {
+    "incidentId": "INC-001",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1009",
+      "TCK-1102"
+    ],
+    "affectedMerchants": [
+      "M-049",
+      "M-050"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T15:52:24.272136",
+    "lastUpdated": "2026-01-31T16:03:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-002",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1025",
+      "TCK-1113",
+      "TCK-1001"
+    ],
+    "affectedMerchants": [
+      "M-005",
+      "M-008",
+      "M-028"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T15:52:24.272136",
+    "lastUpdated": "2026-01-31T16:22:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-003",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1033",
+      "TCK-1091",
+      "TCK-1085"
+    ],
+    "affectedMerchants": [
+      "M-030",
+      "M-012",
+      "M-028"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T16:00:24.272136",
+    "lastUpdated": "2026-01-31T16:19:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-004",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1042",
+      "TCK-1022",
+      "TCK-1047",
+      "TCK-1012"
+    ],
+    "affectedMerchants": [
+      "M-009",
+      "M-013",
+      "M-035",
+      "M-028"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T16:02:24.272136",
+    "lastUpdated": "2026-01-31T16:23:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-005",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1028",
+      "TCK-1110"
+    ],
+    "affectedMerchants": [
+      "M-026",
+      "M-028"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T16:09:24.272136",
+    "lastUpdated": "2026-01-31T16:26:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-006",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1000",
+      "TCK-1010",
+      "TCK-1107"
+    ],
+    "affectedMerchants": [
+      "M-040",
+      "M-039",
+      "M-004"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T16:29:24.272136",
+    "lastUpdated": "2026-01-31T16:46:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-007",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1021",
+      "TCK-1016"
+    ],
+    "affectedMerchants": [
+      "M-020",
+      "M-017"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T16:35:24.272136",
+    "lastUpdated": "2026-01-31T16:56:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-008",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1111",
+      "TCK-1072",
+      "TCK-1064"
+    ],
+    "affectedMerchants": [
+      "M-045",
+      "M-015",
+      "M-036"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T16:40:24.272136",
+    "lastUpdated": "2026-01-31T17:03:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-009",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1002",
+      "TCK-1092"
+    ],
+    "affectedMerchants": [
+      "M-022",
+      "M-016"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T16:49:24.272136",
+    "lastUpdated": "2026-01-31T17:12:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-010",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1013",
+      "TCK-1019",
+      "TCK-1057"
+    ],
+    "affectedMerchants": [
+      "M-020",
+      "M-046",
+      "M-024"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T17:08:24.272136",
+    "lastUpdated": "2026-01-31T17:35:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-011",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1096",
+      "TCK-1090"
+    ],
+    "affectedMerchants": [
+      "M-009",
+      "M-015"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T17:21:24.272136",
+    "lastUpdated": "2026-01-31T17:40:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-012",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1067",
+      "TCK-1105"
+    ],
+    "affectedMerchants": [
+      "M-041",
+      "M-008"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T17:27:24.272136",
+    "lastUpdated": "2026-01-31T17:39:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-013",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1037",
+      "TCK-1083",
+      "TCK-1082",
+      "TCK-1032"
+    ],
+    "affectedMerchants": [
+      "M-048",
+      "M-031",
+      "M-045",
+      "M-009"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T17:30:24.272136",
+    "lastUpdated": "2026-01-31T17:49:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-014",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1038",
+      "TCK-1080"
+    ],
+    "affectedMerchants": [
+      "M-023",
+      "M-046"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T17:44:24.272136",
+    "lastUpdated": "2026-01-31T17:48:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-015",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1099"
+    ],
+    "affectedMerchants": [
+      "M-018"
+    ],
+    "ticketCount": 1,
+    "firstSeen": "2026-01-31T17:57:24.272136",
+    "lastUpdated": "2026-01-31T17:57:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-016",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1007",
+      "TCK-1035"
+    ],
+    "affectedMerchants": [
+      "M-048",
+      "M-021"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T18:03:24.272136",
+    "lastUpdated": "2026-01-31T18:04:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-017",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1040",
+      "TCK-1061",
+      "TCK-1051"
+    ],
+    "affectedMerchants": [
+      "M-011",
+      "M-043",
+      "M-018"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T18:10:24.272136",
+    "lastUpdated": "2026-01-31T18:21:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-018",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1088",
+      "TCK-1098"
+    ],
+    "affectedMerchants": [
+      "M-030",
+      "M-001"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T18:20:24.272136",
+    "lastUpdated": "2026-01-31T18:40:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-019",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1074",
+      "TCK-1062"
+    ],
+    "affectedMerchants": [
+      "M-043",
+      "M-036"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T18:30:24.272136",
+    "lastUpdated": "2026-01-31T18:39:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-020",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1052",
+      "TCK-1097",
+      "TCK-1084"
+    ],
+    "affectedMerchants": [
+      "M-020",
+      "M-027",
+      "M-017"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T18:35:24.272136",
+    "lastUpdated": "2026-01-31T18:37:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-021",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1029",
+      "TCK-1036",
+      "TCK-1046"
+    ],
+    "affectedMerchants": [
+      "M-033",
+      "M-045",
+      "M-024"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T18:51:24.272136",
+    "lastUpdated": "2026-01-31T19:05:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-022",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1049",
+      "TCK-1039"
+    ],
+    "affectedMerchants": [
+      "M-044",
+      "M-002"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T18:54:24.272136",
+    "lastUpdated": "2026-01-31T19:12:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-023",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1106",
+      "TCK-1034"
+    ],
+    "affectedMerchants": [
+      "M-048",
+      "M-045"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T18:56:24.272136",
+    "lastUpdated": "2026-01-31T19:18:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-024",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1087",
+      "TCK-1041",
+      "TCK-1031",
+      "TCK-1075"
+    ],
+    "affectedMerchants": [
+      "M-023",
+      "M-040",
+      "M-002",
+      "M-042"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T19:02:24.272136",
+    "lastUpdated": "2026-01-31T19:26:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-025",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1004",
+      "TCK-1070",
+      "TCK-1066"
+    ],
+    "affectedMerchants": [
+      "M-040",
+      "M-050",
+      "M-001"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T19:22:24.272136",
+    "lastUpdated": "2026-01-31T19:41:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-026",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1118",
+      "TCK-1104",
+      "TCK-1065",
+      "TCK-1076"
+    ],
+    "affectedMerchants": [
+      "M-003",
+      "M-046",
+      "M-029",
+      "M-016"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T19:30:24.272136",
+    "lastUpdated": "2026-01-31T19:51:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-027",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1045",
+      "TCK-1079",
+      "TCK-1008"
+    ],
+    "affectedMerchants": [
+      "M-023",
+      "M-009",
+      "M-016"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T19:31:24.272136",
+    "lastUpdated": "2026-01-31T19:42:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-028",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1059",
+      "TCK-1116",
+      "TCK-1068"
+    ],
+    "affectedMerchants": [
+      "M-001",
+      "M-045",
+      "M-030"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T19:34:24.272136",
+    "lastUpdated": "2026-01-31T20:01:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-029",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1071",
+      "TCK-1060",
+      "TCK-1078",
+      "TCK-1005"
+    ],
+    "affectedMerchants": [
+      "M-050",
+      "M-014",
+      "M-038",
+      "M-012"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T19:45:24.272136",
+    "lastUpdated": "2026-01-31T20:15:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-030",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1020",
+      "TCK-1081",
+      "TCK-1053"
+    ],
+    "affectedMerchants": [
+      "M-041",
+      "M-022",
+      "M-045"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T20:06:24.272136",
+    "lastUpdated": "2026-01-31T20:31:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-031",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1011",
+      "TCK-1026"
+    ],
+    "affectedMerchants": [
+      "M-005",
+      "M-035"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T20:07:24.272136",
+    "lastUpdated": "2026-01-31T20:27:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-032",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1048",
+      "TCK-1100",
+      "TCK-1017",
+      "TCK-1108"
+    ],
+    "affectedMerchants": [
+      "M-020",
+      "M-031",
+      "M-008",
+      "M-028"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T20:14:24.272136",
+    "lastUpdated": "2026-01-31T20:44:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-033",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1093",
+      "TCK-1089",
+      "TCK-1027",
+      "TCK-1094"
+    ],
+    "affectedMerchants": [
+      "M-027",
+      "M-009",
+      "M-026",
+      "M-024"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T20:21:24.272136",
+    "lastUpdated": "2026-01-31T20:36:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-034",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1056",
+      "TCK-1024",
+      "TCK-1086"
+    ],
+    "affectedMerchants": [
+      "M-020",
+      "M-027",
+      "M-011"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T20:28:24.272136",
+    "lastUpdated": "2026-01-31T20:47:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-035",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1043",
+      "TCK-1055",
+      "TCK-1023",
+      "TCK-1077"
+    ],
+    "affectedMerchants": [
+      "M-017",
+      "M-022",
+      "M-044"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T20:45:24.272136",
+    "lastUpdated": "2026-01-31T21:14:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-036",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1003",
+      "TCK-1115",
+      "TCK-1119"
+    ],
+    "affectedMerchants": [
+      "M-005",
+      "M-016",
+      "M-047"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T20:52:24.272136",
+    "lastUpdated": "2026-01-31T21:21:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-037",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1044",
+      "TCK-1103",
+      "TCK-1095"
+    ],
+    "affectedMerchants": [
+      "M-003",
+      "M-002",
+      "M-013"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T20:53:24.272136",
+    "lastUpdated": "2026-01-31T21:17:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-038",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1018",
+      "TCK-1014",
+      "TCK-1050",
+      "TCK-1117"
+    ],
+    "affectedMerchants": [
+      "M-005",
+      "M-035",
+      "M-018",
+      "M-028"
+    ],
+    "ticketCount": 4,
+    "firstSeen": "2026-01-31T20:57:24.272136",
+    "lastUpdated": "2026-01-31T21:13:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-039",
+    "issueType": "apiError",
+    "ticketIds": [
+      "TCK-1101",
+      "TCK-1069",
+      "TCK-1030",
+      "TCK-1006",
+      "TCK-1063"
+    ],
+    "affectedMerchants": [
+      "M-049",
+      "M-016",
+      "M-017",
+      "M-023",
+      "M-044"
+    ],
+    "ticketCount": 5,
+    "firstSeen": "2026-01-31T21:20:24.272136",
+    "lastUpdated": "2026-01-31T21:32:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-040",
+    "issueType": "latencyIssue",
+    "ticketIds": [
+      "TCK-1058",
+      "TCK-1109"
+    ],
+    "affectedMerchants": [
+      "M-020",
+      "M-038"
+    ],
+    "ticketCount": 2,
+    "firstSeen": "2026-01-31T21:23:24.272136",
+    "lastUpdated": "2026-01-31T21:34:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-041",
+    "issueType": "configError",
+    "ticketIds": [
+      "TCK-1114",
+      "TCK-1054",
+      "TCK-1073"
+    ],
+    "affectedMerchants": [
+      "M-009",
+      "M-035",
+      "M-013"
+    ],
+    "ticketCount": 3,
+    "firstSeen": "2026-01-31T21:26:24.272136",
+    "lastUpdated": "2026-01-31T21:29:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-042",
+    "issueType": "checkoutFailure",
+    "ticketIds": [
+      "TCK-1015"
+    ],
+    "affectedMerchants": [
+      "M-034"
+    ],
+    "ticketCount": 1,
+    "firstSeen": "2026-01-31T21:29:24.272136",
+    "lastUpdated": "2026-01-31T21:29:24.272136",
+    "status": "open"
+  },
+  {
+    "incidentId": "INC-043",
+    "issueType": "webhookMissing",
+    "ticketIds": [
+      "TCK-1112"
+    ],
+    "affectedMerchants": [
+      "M-050"
+    ],
+    "ticketCount": 1,
+    "firstSeen": "2026-01-31T21:38:24.272136",
+    "lastUpdated": "2026-01-31T21:38:24.272136",
+    "status": "open"
+  }
+]

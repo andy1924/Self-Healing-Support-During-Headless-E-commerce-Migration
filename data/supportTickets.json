@@ -1,0 +1,962 @@
+[
+  {
+    "ticketId": "TCK-1000",
+    "merchantId": "M-004",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T16:29:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1001",
+    "merchantId": "M-005",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T16:22:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1002",
+    "merchantId": "M-016",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T16:49:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1003",
+    "merchantId": "M-016",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T20:52:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1004",
+    "merchantId": "M-040",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T19:22:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1005",
+    "merchantId": "M-038",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T20:15:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1006",
+    "merchantId": "M-017",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:30:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1007",
+    "merchantId": "M-021",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T18:03:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1008",
+    "merchantId": "M-009",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T19:42:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1009",
+    "merchantId": "M-049",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T15:52:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1010",
+    "merchantId": "M-040",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T16:39:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1011",
+    "merchantId": "M-035",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T20:07:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1012",
+    "merchantId": "M-009",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T16:23:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1013",
+    "merchantId": "M-024",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T17:08:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1014",
+    "merchantId": "M-035",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T21:01:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1015",
+    "merchantId": "M-034",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T21:29:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1016",
+    "merchantId": "M-020",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T16:56:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1017",
+    "merchantId": "M-008",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T20:31:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1018",
+    "merchantId": "M-018",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T20:57:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1019",
+    "merchantId": "M-046",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T17:32:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1020",
+    "merchantId": "M-041",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T20:06:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1021",
+    "merchantId": "M-017",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T16:35:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1022",
+    "merchantId": "M-028",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T16:10:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1023",
+    "merchantId": "M-022",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:14:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1024",
+    "merchantId": "M-011",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T20:30:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1025",
+    "merchantId": "M-028",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T15:52:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1026",
+    "merchantId": "M-005",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T20:27:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1027",
+    "merchantId": "M-024",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T20:30:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1028",
+    "merchantId": "M-028",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T16:09:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1029",
+    "merchantId": "M-024",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T18:51:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1030",
+    "merchantId": "M-044",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:29:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1031",
+    "merchantId": "M-023",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:16:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1032",
+    "merchantId": "M-048",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T17:49:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1033",
+    "merchantId": "M-012",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T16:00:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1034",
+    "merchantId": "M-048",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T19:18:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1035",
+    "merchantId": "M-048",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T18:04:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1036",
+    "merchantId": "M-045",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T19:03:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1037",
+    "merchantId": "M-031",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T17:30:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1038",
+    "merchantId": "M-023",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T17:44:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1039",
+    "merchantId": "M-002",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T19:12:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1040",
+    "merchantId": "M-018",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T18:10:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1041",
+    "merchantId": "M-042",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:12:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1042",
+    "merchantId": "M-035",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T16:02:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1043",
+    "merchantId": "M-017",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T20:45:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1044",
+    "merchantId": "M-003",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T20:53:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1045",
+    "merchantId": "M-023",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T19:31:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1046",
+    "merchantId": "M-033",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T19:05:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1047",
+    "merchantId": "M-013",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T16:10:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1048",
+    "merchantId": "M-028",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T20:14:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1049",
+    "merchantId": "M-044",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T18:54:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1050",
+    "merchantId": "M-005",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T21:07:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1051",
+    "merchantId": "M-043",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T18:21:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1052",
+    "merchantId": "M-020",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T18:35:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1053",
+    "merchantId": "M-045",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T20:31:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1054",
+    "merchantId": "M-013",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T21:28:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1055",
+    "merchantId": "M-044",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:03:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1056",
+    "merchantId": "M-020",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T20:28:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1057",
+    "merchantId": "M-020",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T17:35:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1058",
+    "merchantId": "M-038",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T21:23:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1059",
+    "merchantId": "M-030",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T19:34:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1060",
+    "merchantId": "M-014",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:50:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1061",
+    "merchantId": "M-011",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T18:13:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1062",
+    "merchantId": "M-043",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T18:39:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1063",
+    "merchantId": "M-049",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:32:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1064",
+    "merchantId": "M-015",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T17:03:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1065",
+    "merchantId": "M-003",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T19:51:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1066",
+    "merchantId": "M-050",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T19:41:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1067",
+    "merchantId": "M-041",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T17:27:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1068",
+    "merchantId": "M-045",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T20:01:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1069",
+    "merchantId": "M-016",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:23:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1070",
+    "merchantId": "M-001",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T19:25:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1071",
+    "merchantId": "M-012",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:45:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1072",
+    "merchantId": "M-036",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T16:50:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1073",
+    "merchantId": "M-009",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T21:29:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1074",
+    "merchantId": "M-036",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T18:30:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1075",
+    "merchantId": "M-040",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:26:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1076",
+    "merchantId": "M-029",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T19:51:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1077",
+    "merchantId": "M-017",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:14:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1078",
+    "merchantId": "M-050",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:56:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1079",
+    "merchantId": "M-016",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T19:33:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1080",
+    "merchantId": "M-046",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T17:48:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1081",
+    "merchantId": "M-022",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T20:24:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1082",
+    "merchantId": "M-009",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T17:46:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1083",
+    "merchantId": "M-045",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T17:37:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1084",
+    "merchantId": "M-027",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T18:37:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1085",
+    "merchantId": "M-030",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T16:19:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1086",
+    "merchantId": "M-027",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T20:47:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1087",
+    "merchantId": "M-002",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T19:02:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1088",
+    "merchantId": "M-001",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T18:20:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1089",
+    "merchantId": "M-027",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T20:27:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1090",
+    "merchantId": "M-015",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T17:40:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1091",
+    "merchantId": "M-028",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T16:02:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1092",
+    "merchantId": "M-022",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T17:12:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1093",
+    "merchantId": "M-009",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T20:21:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1094",
+    "merchantId": "M-026",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T20:36:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1095",
+    "merchantId": "M-002",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T21:17:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1096",
+    "merchantId": "M-009",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T17:21:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1097",
+    "merchantId": "M-017",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T18:35:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1098",
+    "merchantId": "M-030",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T18:40:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1099",
+    "merchantId": "M-018",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T17:57:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1100",
+    "merchantId": "M-031",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T20:24:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1101",
+    "merchantId": "M-023",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T21:20:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1102",
+    "merchantId": "M-050",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T16:03:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1103",
+    "merchantId": "M-013",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T21:06:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1104",
+    "merchantId": "M-016",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T19:50:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1105",
+    "merchantId": "M-008",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T17:39:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1106",
+    "merchantId": "M-045",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T18:56:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1107",
+    "merchantId": "M-039",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T16:46:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1108",
+    "merchantId": "M-020",
+    "issueType": "checkoutFailure",
+    "description": "Checkout returns 500 after frontend upgrade",
+    "timestamp": "2026-01-31T20:44:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1109",
+    "merchantId": "M-020",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T21:34:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1110",
+    "merchantId": "M-026",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T16:26:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1111",
+    "merchantId": "M-045",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T16:40:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1112",
+    "merchantId": "M-050",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T21:38:24.272136",
+    "channel": "dashboard"
+  },
+  {
+    "ticketId": "TCK-1113",
+    "merchantId": "M-008",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T16:09:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1114",
+    "merchantId": "M-035",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T21:26:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1115",
+    "merchantId": "M-005",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T21:19:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1116",
+    "merchantId": "M-001",
+    "issueType": "configError",
+    "description": "Integration broke after migration",
+    "timestamp": "2026-01-31T19:58:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1117",
+    "merchantId": "M-028",
+    "issueType": "webhookMissing",
+    "description": "Order webhooks not triggering",
+    "timestamp": "2026-01-31T21:13:24.272136",
+    "channel": "chat"
+  },
+  {
+    "ticketId": "TCK-1118",
+    "merchantId": "M-046",
+    "issueType": "apiError",
+    "description": "API authentication failing intermittently",
+    "timestamp": "2026-01-31T19:30:24.272136",
+    "channel": "email"
+  },
+  {
+    "ticketId": "TCK-1119",
+    "merchantId": "M-047",
+    "issueType": "latencyIssue",
+    "description": "Checkout loading very slowly",
+    "timestamp": "2026-01-31T21:21:24.272136",
+    "channel": "chat"
+  }
+]
