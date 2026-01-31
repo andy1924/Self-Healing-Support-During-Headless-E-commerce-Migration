@@ -1,0 +1,33 @@
+[
+  {
+    "timestamp": "2026-02-01 02:39:46",
+    "incident_id": "INC-001",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 02:38:09",
+    "incident_id": "INC-003",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 02:38:09",
+    "incident_id": "INC-002",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 02:37:45",
+    "incident_id": "INC-001",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 02:32:04",
+    "incident_id": "INC-001",
+    "decision": "REJECTED",
+    "operator": "Naitik",
+    "notes": "Operator rejected AI proposal"
+  }
+]
