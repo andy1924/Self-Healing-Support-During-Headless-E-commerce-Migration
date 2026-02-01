@@ -23,7 +23,8 @@
     "issueType": "configError",
     "description": "Integration broke after migration",
     "timestamp": "2026-01-31T16:49:24.272136",
-    "channel": "dashboard"
+    "channel": "dashboard",
+    "status": "closed"
   },
   {
     "ticketId": "TCK-1003",

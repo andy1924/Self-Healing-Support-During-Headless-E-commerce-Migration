@@ -1,5 +1,65 @@
 [
   {
+    "timestamp": "2026-02-01 11:34:47",
+    "incident_id": "INC-013",
+    "decision": "APPROVED",
+    "notes": "Approved 0 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:34:44",
+    "incident_id": "INC-012",
+    "decision": "APPROVED",
+    "notes": "Approved 0 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:34:40",
+    "incident_id": "INC-011",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:29:57",
+    "incident_id": "INC-010",
+    "decision": "APPROVED",
+    "notes": "Approved 3 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:29:42",
+    "incident_id": "INC-009",
+    "decision": "APPROVED",
+    "notes": "Approved 3 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:25:32",
+    "incident_id": "INC-008",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:24:41",
+    "incident_id": "INC-007",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:23:12",
+    "incident_id": "INC-006",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:19:22",
+    "incident_id": "INC-005",
+    "decision": "APPROVED",
+    "notes": "Approved 0 actions"
+  },
+  {
+    "timestamp": "2026-02-01 11:19:21",
+    "incident_id": "INC-004",
+    "decision": "APPROVED",
+    "notes": "Approved 3 actions"
+  },
+  {
     "timestamp": "2026-02-01 10:36:56",
     "incident_id": "INC-003",
     "decision": "APPROVED",

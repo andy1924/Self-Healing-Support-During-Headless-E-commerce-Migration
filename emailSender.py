@@ -12,21 +12,20 @@ APP_PASSWORD = "yjiw qndx oers kkyi"
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-DELAY_SECONDS = 5  # Fast check for better responsiveness
+CHECK_INTERVAL = 5  # Check for new approvals every 5 seconds
 
 # ===================== PATHS =====================
-# These match your UI paths exactly
+# These paths match your UI structure exactly
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
 INCIDENT_FILE = os.path.join(DATA_DIR, "incidents.json")
 AUDIT_LOG_FILE = os.path.join(DATA_DIR, "auditLog.json")
-# We track sent IDs in a separate JSON to avoid duplicates even if log is deleted
-PROCESSED_FILE = os.path.join(DATA_DIR, "processed_ids.json")
 SENT_LOG_FILE = os.path.join(DATA_DIR, "sent_emails.log")
+PROCESSED_TRACKER = os.path.join(DATA_DIR, "processed_ids.json")
 
 
-# ==============================================================
+# =================================================
 
 class DataManager:
     @staticmethod
@@ -44,58 +43,27 @@ class DataManager:
         with open(filepath, "w") as f: json.dump(data, f, indent=2)
 
     @staticmethod
-    def append_to_log(filepath, timestamp, status, details):
-        """Writes to the text log that the UI reads."""
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        with open(filepath, "a") as f:
+    def append_to_ui_log(timestamp, status, subject):
+        """Writes to the log file that the UI 'Sent Emails' page reads."""
+        os.makedirs(os.path.dirname(SENT_LOG_FILE), exist_ok=True)
+        with open(SENT_LOG_FILE, "a") as f:
             # UI expects: Time | Status | Details
-            f.write(f"{timestamp} | {status} | {details}\n")
-
-
-class ApprovalWatcher:
-    @staticmethod
-    def get_new_approved_incidents():
-        """
-        1. Reads Audit Log for APPROVED decisions.
-        2. Filters out IDs we have already processed.
-        """
-        # Load Audit Log
-        audit_logs = DataManager.load_json(AUDIT_LOG_FILE)
-
-        # Load History of what we already sent
-        processed_data = DataManager.load_json(PROCESSED_FILE)
-        processed_ids = set(processed_data)
-
-        approved_ids = set()
-
-        for entry in audit_logs:
-            if entry.get("decision") == "APPROVED":
-                raw_id = entry.get("incident_id") or entry.get("incidentId")
-                if raw_id:
-                    clean_id = str(raw_id).strip().upper()
-                    if clean_id not in processed_ids:
-                        approved_ids.add(clean_id)
-
-        return approved_ids
+            f.write(f"{timestamp} | {status} | {subject}\n")
 
 
 class EmailService:
     @staticmethod
-    def send_email(incident_data):
-        iid = incident_data.get('incidentId') or incident_data.get('id')
-        issue = incident_data.get('issueType') or incident_data.get('issue')
-
-        subject = f"[INCIDENT {iid}] Remediation Approved: {issue}"
+    def send_email(incident_id, issue_type):
+        subject = f"[INCIDENT {incident_id}] Remediation Approved: {issue_type}"
         body = f"""
 ACTION APPROVED.
 
-Incident ID: {iid}
-Issue Type: {issue}
-Status: Remediation in Progress
+Incident ID: {incident_id}
+Issue: {issue_type}
+Status: Remediation Started
 
-The automated response plan has been authorized by the operator.
+The operator has authorized the automated action plan.
 """
-
         msg = EmailMessage()
         msg["From"] = SENDER_EMAIL
         msg["To"] = RECEIVER_EMAIL
@@ -109,58 +77,71 @@ The automated response plan has been authorized by the operator.
                 server.send_message(msg)
             return True, subject
         except Exception as e:
-            print(f"   [Error] SMTP Failed: {e}")
+            print(f"   [SMTP Error] {e}")
             return False, str(e)
 
 
-class MainLoop:
+class Bot:
     @staticmethod
     def run():
-        print(f"--- EMAIL SYNC SERVICE STARTED ---")
+        print("--- BACKGROUND EMAIL SENDER STARTED ---")
         print(f"Watching: {AUDIT_LOG_FILE}")
-        print(f"Writing to: {SENT_LOG_FILE}")
-        print("----------------------------------")
+        print("---------------------------------------")
 
         while True:
-            # 1. Find Approved but Unsent IDs
-            approved_ids = ApprovalWatcher.get_new_approved_incidents()
+            # 1. Load History (What we already sent)
+            processed_ids = DataManager.load_json(PROCESSED_TRACKER)
 
-            if approved_ids:
-                print(f"[{datetime.now().strftime('%H:%M:%S')}] Found new approvals: {approved_ids}")
+            # 2. Load Approvals (What needs sending)
+            audit_logs = DataManager.load_json(AUDIT_LOG_FILE)
 
-                # Load Incident Details
-                all_incidents = DataManager.load_json(INCIDENT_FILE)
-                processed_ids = DataManager.load_json(PROCESSED_FILE)
+            # 3. Find New Approvals
+            for entry in audit_logs:
+                if entry.get("decision") == "APPROVED":
+                    raw_id = entry.get("incident_id")
 
-                for incident in all_incidents:
-                    raw_id = incident.get("incidentId") or incident.get("id")
-                    if not raw_id: continue
+                    if raw_id:
+                        clean_id = str(raw_id).strip().upper()
 
-                    clean_id = str(raw_id).strip().upper()
+                        # If this is APPROVED and NOT yet processed
+                        if clean_id not in processed_ids:
+                            print(f"[{datetime.now().strftime('%H:%M:%S')}] New Approval Found: {clean_id}")
 
-                    # If this incident is in our "New Approvals" list
-                    if clean_id in approved_ids:
-                        print(f"   >>> Sending email for {clean_id}...")
+                            # Fetch Incident Details for the email body
+                            all_incidents = DataManager.load_json(INCIDENT_FILE)
+                            issue_type = "General Issue"
 
-                        success, info = EmailService.send_email(incident)
+                            # Find matching incident data
+                            for inc in all_incidents:
+                                inc_id_raw = inc.get("incidentId") or inc.get("id")
+                                if inc_id_raw and str(inc_id_raw).strip().upper() == clean_id:
+                                    issue_type = inc.get("issueType", "Unknown Issue")
+                                    break
 
-                        if success:
-                            # A. Mark as Processed immediately so we don't double send
-                            processed_ids.append(clean_id)
-                            DataManager.save_json(PROCESSED_FILE, processed_ids)
+                            # SEND EMAIL
+                            success, info = EmailService.send_email(clean_id, issue_type)
 
-                            # B. Update the UI Log
-                            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                            DataManager.append_to_log(SENT_LOG_FILE, timestamp, "SENT", info)
-                            print("Email Sent & Log Updated.")
-                        else:
-                            print("Email Failed.")
+                            if success:
+                                print(f"   ✅ Email Sent: {info}")
 
-            time.sleep(DELAY_SECONDS)
+                                # A. Mark as processed so we don't send again
+                                processed_ids.append(clean_id)
+                                DataManager.save_json(PROCESSED_TRACKER, processed_ids)
+
+                                # B. Update UI Log
+                                ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                DataManager.append_to_ui_log(ts, "SENT", info)
+                            else:
+                                print("   ❌ Failed to send.")
+
+            time.sleep(CHECK_INTERVAL)
 
 
 if __name__ == "__main__":
+    # Optional: Uncomment the next line if you want to clear history and re-send everything
+    # if os.path.exists(PROCESSED_TRACKER): os.remove(PROCESSED_TRACKER)
+
     try:
-        MainLoop.run()
+        Bot.run()
     except KeyboardInterrupt:
-        print("\nService Stopped.")
+        print("\nStopped.")
