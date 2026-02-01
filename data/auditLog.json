@@ -1,5 +1,23 @@
 [
   {
+    "timestamp": "2026-02-01 10:36:56",
+    "incident_id": "INC-003",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 10:36:52",
+    "incident_id": "INC-002",
+    "decision": "REJECTED",
+    "notes": "Operator rejected AI proposal"
+  },
+  {
+    "timestamp": "2026-02-01 10:36:49",
+    "incident_id": "INC-001",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
     "timestamp": "2026-02-01 10:17:08",
     "incident_id": "INC-005",
     "decision": "REJECTED",

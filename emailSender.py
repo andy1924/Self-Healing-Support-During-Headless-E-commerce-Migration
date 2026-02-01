@@ -152,9 +152,9 @@ class MainLoop:
                             # B. Update the UI Log
                             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                             DataManager.append_to_log(SENT_LOG_FILE, timestamp, "SENT", info)
-                            print("   ✅ Email Sent & Log Updated.")
+                            print("Email Sent & Log Updated.")
                         else:
-                            print("   ❌ Email Failed.")
+                            print("Email Failed.")
 
             time.sleep(DELAY_SECONDS)
 
