@@ -79,3 +79,6 @@ pip install streamlit langchain langchain-openai python-dotenv
 
 OPENAI_API_KEY = your_key_here
 
+## Future Prospects
+
+- Can create a Knowledge Base (KB) of all known issues. Using vector embeddings we can send previous event with the LLM answers to generate accurate responses.
