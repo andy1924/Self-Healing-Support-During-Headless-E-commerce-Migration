@@ -1,1032 +1,1161 @@
 [
   {
     "incidentId": "INC-001",
-    "rootCauseHypothesis": "The checkout failures for merchants M-049 and M-050 may be caused by issues in the headless API integration affecting the payment processing system during a specific time window.",
+    "rootCauseHypothesis": "The checkout failure may be due to a recent change in the checkout process that affects certain merchants, potentially linked to API endpoints or third-party payment gateway integration issues.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the headless API logs for errors or anomalies around the time window to identify any bugs or integration issues with the checkout process.",
+        "description": "Review the recent code changes in the checkout process and monitor relevant API endpoints for errors during the incident time window.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants M-049 and M-050 about the issue and inform them that we are investigating the problem.",
+        "description": "Notify affected merchants (M-049 and M-050) about the issue and provide a temporary workaround if applicable.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The checkout failures are related to the recent migration to a headless architecture.",
-      "The affected merchants have not made significant changes to their configurations during the incident time window."
+      "The checkout failures are not related to external factors such as merchant configurations or network issues.",
+      "The system has logging enabled to capture errors related to the checkout process."
     ],
-    "uncertaintyNotes": "Data on transaction logs and specific error messages related to the checkout process may be incomplete, which limits the ability to pinpoint the exact cause."
+    "uncertaintyNotes": "The root cause remains a hypothesis as we have incomplete data on specific error messages or logs that could pinpoint the exact issue.",
+    "performanceMetrics": {
+      "latencySeconds": 5.146,
+      "cpuTimeSeconds": 0.125,
+      "memoryDeltaMB": 5.94,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-002",
-    "rootCauseHypothesis": "The latency issue may be attributed to increased traffic or a bottleneck in the newly migrated headless architecture, which might be affecting the performance of services for the affected merchants.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Monitor the traffic load and performance metrics for the affected merchants to identify any potential bottlenecks in the system.",
-        "requiresHumanApproval": false,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Inform affected merchants about the ongoing investigation and recommend temporary performance optimization measures if necessary.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The latency issue is affecting multiple merchants, indicating a widespread problem rather than isolated incidents.",
-      "The incident is related to the recent migration to headless architecture, as no prior latency issues were reported."
-    ],
-    "uncertaintyNotes": "There is uncertainty regarding the exact nature of the latency issue. It's possible that external factors, such as third-party integrations or network conditions, could also be contributing to the problem."
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-002\",\n  \"rootCauseHypothesis\": \"The latency issue may be due to server performance degradation, possibly linked to increased load from the affected merchants within the observed time window.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Monitor server performance metrics to identify any spikes in resource utilization that could be causing the latency.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    },\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"Implement temporary performance tuning measures or scaling policies to alleviate latency for the affected merchants.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    }\n  ],\n  \"assumptions\": [\n    \"The reported latency issue is affecting multiple merchants, indicating a potential systemic issue rather than isolated incidents.\",\n    \"Merchant M-005, M-008, and M-028 have similar traffic patterns or dependency on shared resources.\"\n  ],\n  \"uncertaintyNotes\": \"There is a possibility that external factors, such as network issues or configuration changes, might be contributing to the latency, but the data does not provide clarity on these aspects.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 6.583,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.04,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-003",
-    "rootCauseHypothesis": "The incident is likely caused by a misconfiguration in the system settings affecting the deployment of data to the affected merchants. Given that three tickets have been raised, it suggests a systemic issue with configuration affecting multiple merchants.",
+    "rootCauseHypothesis": "The incident may be due to a misconfiguration in the system settings affecting the affected merchants. This could be related to recent changes made during the migration from hosted to headless architecture, which may not have been properly synchronized with all merchant accounts.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Review the configuration settings for the affected merchants to identify any discrepancies or errors that may have led to the configError.",
+        "description": "Review the configuration settings for the affected merchants and compare them with the expected settings to identify discrepancies.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Communicate with the affected merchants to inform them of the incident and potential troubleshooting steps.",
+        "description": "Communicate with the affected merchants to gather more details about their specific issues and any recent changes they may have encountered.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The configuration settings have not been recently updated in a manner that might have led to this type of error.",
-      "The issue is limited to the merchants listed in the incident details and does not affect others."
+      "The configuration error affects specific merchants and is not a systemic issue.",
+      "The issue began within the last 19 minutes, which suggests it could be tied to recent activities."
     ],
-    "uncertaintyNotes": "There is uncertainty regarding whether the issue is isolated to specific merchants or if there is a broader configuration issue affecting more merchants than reported. Additionally, it is unclear if any recent changes to the system could be contributing factors."
+    "uncertaintyNotes": "There is uncertainty around whether the issue is indeed due to misconfiguration or if other factors are at play, such as external dependencies or an underlying bug in the system.",
+    "performanceMetrics": {
+      "latencySeconds": 5.678,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.04,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-004",
-    "rootCauseHypothesis": "The missing webhooks may be due to a misconfiguration in the webhook settings for the affected merchants, possibly linked to the recent migration from hosted to headless architecture.",
-    "confidenceLevel": 0.65,
+    "rootCauseHypothesis": "The webhook configurations for the affected merchants may not have been properly set up or there may have been a temporary disruption in webhook processing during the time window.",
+    "confidenceLevel": 0.75,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the webhook configuration for the affected merchants to identify any discrepancies or errors following the architecture migration.",
+        "description": "Investigate the webhook configuration for the affected merchants and verify if they are set up correctly in the system.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Reach out to the affected merchants to inform them of the issue and gather any additional context or error messages related to the missing webhooks.",
-        "requiresHumanApproval": true,
+        "description": "Notify the affected merchants regarding the incident and inform them of the ongoing investigation.",
+        "requiresHumanApproval": false,
         "riskLevel": "low"
       },
       {
         "actionType": "mitigation",
-        "description": "Set up a temporary monitoring system to alert the engineering team when webhooks fail or are not triggered for the affected merchants during investigation.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
+        "description": "Implement temporary logging to capture webhook processing events in real-time for further analysis.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
       }
     ],
     "assumptions": [
-      "The issue stems from the recent architectural changes impacting webhook functionality.",
-      "The affected merchants have similar setups that could help identify common configuration issues."
+      "The webhook missing issue is isolated to the specified merchants without affecting others.",
+      "There have been no recent significant changes in the system that could impact webhook functionality."
     ],
-    "uncertaintyNotes": "The exact configuration state of webhooks for each merchant is not currently available, which introduces uncertainty into assessing the root cause accurately."
+    "uncertaintyNotes": "The analysis is based on the available incident data and may not reflect all underlying issues, especially if configurations or recent changes are not documented in the system.",
+    "performanceMetrics": {
+      "latencySeconds": 7.321,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.05,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-005",
-    "rootCauseHypothesis": "The API errors may stem from the migration process between hosted and headless architecture, causing temporary disruptions in API responses for certain merchants.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate API logs for error rates and specific error types reported by the affected merchants. Determine if the issue is linked to the headless architecture deployment.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants about the ongoing incident and provide updates as more information becomes available.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The incidents are directly related to the recent architecture migration.",
-      "The affected merchants are experiencing similar issues due to a common underlying cause."
-    ],
-    "uncertaintyNotes": "The full scope and impact of the incidents are not fully understood due to incomplete data, and further investigation is needed to confirm the root cause."
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-005\",\n  \"rootCauseHypothesis\": \"The incident may be related to an issue with the API that affects specific endpoints used by the affected merchants, possibly stemming from recent changes in configuration or code deployed during the migration to headless architecture.\",\n  \"confidenceLevel\": 0.6,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Review the API logs for the time window to identify common errors and correlate them with any recent deployment changes.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Inform the affected merchants about the incident and advise them on any temporary workarounds to mitigate impact while longer-term solutions are being investigated.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The API logs contain detailed error reports that can help identify the specific error causing the issue.\",\n    \"The recent changes made during migration have not introduced new bugs that could affect the API's functionality.\"\n  ],\n  \"uncertaintyNotes\": \"The exact source of the API errors cannot be confirmed without access to the logs, and the incident might be due to factors beyond recent changes, such as network issues or dependencies on external services.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 6.162,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.03,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-006",
-    "rootCauseHypothesis": "The latency issue could be due to increased load on the server infrastructure during the specified time window, potentially exacerbated by ongoing migrations from hosted to headless architecture.",
+    "rootCauseHypothesis": "The latency issue could be due to increased application load or database strain during the observed time window, affecting response times for the affected merchants.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the server load and performance metrics during the time window to identify any bottlenecks.",
-        "requiresHumanApproval": true,
+        "description": "Investigate system load metrics and database performance logs during the incident time window to identify any bottlenecks.",
+        "requiresHumanApproval": false,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Communicate with affected merchants (M-040, M-039, M-004) to inform them about the ongoing investigation and assure them of our attention to the issue.",
-        "requiresHumanApproval": false,
+        "description": "Communicate with the affected merchants to gather additional details on the latency experienced, which could help pinpoint the cause.",
+        "requiresHumanApproval": true,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The affected merchants have a common usage pattern that might be stressing the system during peak times.",
-      "No recent changes were made to the application that could have introduced new latencies."
+      "The latency issue is dynamically correlated with increased transaction load.",
+      "Data on system performance is adequate and accessible for analysis."
     ],
-    "uncertaintyNotes": "There may be other external factors affecting the latency that are not accounted for in the available incident data."
+    "uncertaintyNotes": "The exact cause of latency may vary and could involve external factors not recorded in the incident data. The proposed root cause is based on common patterns observed in similar incidents.",
+    "performanceMetrics": {
+      "latencySeconds": 5.468,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.01,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-007",
-    "rootCauseHypothesis": "The checkout failures may be due to a temporary outage in the payment processing service, which could affect multiple merchants at once. There might also be compatibility issues with the headless architecture implementation for these merchants.",
+    "rootCauseHypothesis": "The checkout failures may be due to issues in the payment processing system or potential API misconfiguration after the migration to headless architecture.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the payment processing service status and logs during the incident time window to determine if there were any outages or errors that could have affected checkout functionality.",
-        "requiresHumanApproval": false,
+        "description": "Investigate the payment processing logs and API responses for errors or failures during the reported time window.",
+        "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Communicate with the affected merchants (M-020 and M-017) to notify them of the ongoing investigation and gather any additional information they may have about their checkout processes.",
-        "requiresHumanApproval": true,
+        "description": "Reach out to affected merchants (M-020 and M-017) to gather more information about the checkout failure experience and get additional incident context.",
+        "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The checkout failures correlate with the status of the payment processing service.",
-      "The impacted merchants utilize the same payment processing system."
+      "The checkout failure incidents are related to the payment processing system components essential for completing transactions.",
+      "Both affected merchants are using the same payment processing configuration."
     ],
-    "uncertaintyNotes": "There are uncertainties regarding the actual architecture changes and how they may affect the checkout process. The lack of detailed incident logs from the time of failure introduces further uncertainty."
+    "uncertaintyNotes": "There is uncertainty regarding the exact point of failure in the payment process and whether other factors such as network issues or configurations specific to the merchants may also be contributing to the problem.",
+    "performanceMetrics": {
+      "latencySeconds": 5.753,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-008",
-    "rootCauseHypothesis": "The API errors may be attributed to a misconfiguration or overload in the new headless architecture, which could be affecting multiple merchants concurrently within the specified time window.",
+    "rootCauseHypothesis": "The apiError experienced by the affected merchants may be due to a potential misconfiguration in the new headless architecture which could be leading to invalid API responses or downtime. Alternatively, it could be a result of increased load during this transition period.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the API logs for M-045, M-015, and M-036 during the time window to identify error patterns or configurations that may have changed.",
-        "requiresHumanApproval": false,
+        "description": "Investigate the API logs for error messages or patterns that correlate with the reported incidents. Check for any configuration issues that may have occurred during the migration to headless architecture.",
+        "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants about the ongoing investigation and reassure them that we are working on a resolution.",
+        "description": "Notify the affected merchants M-045, M-015, and M-036 about the ongoing issue and potential implications, ensuring they are kept informed while the issue is being resolved.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The incidents reported by the affected merchants are related to a singular issue rather than individual merchant issues.",
+      "Error messages related to the apiError can be retrieved promptly to assist in diagnosis.",
+      "The problem likely stems from the architecture transition rather than external factors."
+    ],
+    "uncertaintyNotes": "There may be additional underlying causes contributing to the apiError that are not yet identified. The confidence level reflects uncertainty in the root cause hypothesis due to the incomplete nature of the incident data.",
+    "performanceMetrics": {
+      "latencySeconds": 7.972,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-009",
+    "rootCauseHypothesis": "The configuration errors likely resulted from incorrect settings or parameters after a recent deployment or update to the system, potentially affecting the referenced merchants M-022 and M-016.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Review the configuration changes made in the last deployment to identify discrepancies affecting the affected merchants.",
         "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Notify affected merchants M-022 and M-016 about the ongoing issue and keep them updated on resolution progress.",
+        "requiresHumanApproval": false,
         "riskLevel": "low"
       },
       {
         "actionType": "documentation",
-        "description": "Update incident documentation with findings for future reference and to aid in quicker resolution of similar issues.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The API error is affecting multiple merchants; hence it is likely not isolated to a single configuration issue.",
-      "The headless architecture was recently deployed or modified, potentially introducing new issues."
-    ],
-    "uncertaintyNotes": "The exact nature of the API error is not defined, and without specific error messages from logs, the hypothesis remains speculative. The investigation may yield different results leading to alternative root causes."
-  },
-  {
-    "incidentId": "INC-009",
-    "rootCauseHypothesis": "The incident likely stems from configuration errors in the system affecting the affected merchants, potentially during the migration to the headless architecture.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Review the configuration settings for the affected merchants (M-022, M-016) for any discrepancies or errors that may have arisen during the migration process.",
+        "description": "Update the configuration management documentation to ensure clarity on the correct settings to minimize future incidents.",
         "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify the affected merchants about the incident and provide them with interim instructions until the issue is resolved.",
-        "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The configuration errors are directly related to the recent changes in architecture.",
-      "The affected merchants have similar configuration settings that may lead them to encounter the same issue."
+      "Configuration errors stem from either manual input or deployment automation issues.",
+      "The affected merchants have not implemented any local changes that could contribute to their configError."
     ],
-    "uncertaintyNotes": "The root cause is hypothesized based on limited information and may vary based on underlying system complexities. Additional data may be needed to confirm the exact nature of the configuration errors."
+    "uncertaintyNotes": "There is uncertainty regarding the specifics of recent deployments and their impact on the affected merchants, which may not be fully captured in the incident data.",
+    "performanceMetrics": {
+      "latencySeconds": 6.166,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.01,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-010",
-    "rootCauseHypothesis": "The webhook configuration may have been incorrectly set up or modified during the migration to a headless architecture, leading to missing webhook notifications for the affected merchants. Alternatively, there could be issues with the webhook service itself, such as downtime or misrouting of webhook events.",
+    "rootCauseHypothesis": "The missing webhook issue may have been caused by a configuration error during the transition to the headless architecture, leading to failures in webhook delivery for at least three merchants.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the webhook configuration for affected merchants to ensure that settings are correct and functioning as intended.",
-        "requiresHumanApproval": true,
+        "description": "Investigate the webhook configuration settings in the new headless architecture for the affected merchants and validate if any changes could have caused delivery failures.",
+        "requiresHumanApproval": false,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants and provide updates on the incident status while investigating the root causes.",
-        "requiresHumanApproval": false,
+        "description": "Reach out to the affected merchants (M-020, M-046, M-024) to inform them of the ongoing investigation and gather any additional information that may assist in diagnosing the issue.",
+        "requiresHumanApproval": true,
         "riskLevel": "low"
       },
       {
         "actionType": "mitigation",
-        "description": "Implement temporary monitoring on the webhook service to catch any future issues proactively and provide alerts.",
-        "requiresHumanApproval": true,
+        "description": "Implement a temporary fallback mechanism for webhook delivery to ensure affected merchants can continue their operations while the root cause is being investigated.",
+        "requiresHumanApproval": false,
         "riskLevel": "medium"
       }
     ],
     "assumptions": [
-      "The webhook service was part of the migration to a headless architecture and may have encountered configuration issues.",
-      "The affected merchants are relying on webhooks for critical functionality and would notice their absence within the reported time window."
+      "The incident is solely related to webhooks and not other functionalities.",
+      "The transition to headless architecture has introduced new configurations that may not be compatible with existing setups."
     ],
-    "uncertaintyNotes": "There is uncertainty regarding whether the incident is due to configuration issues or underlying service problems. Limited data from the affected merchants may affect the diagnosis."
+    "uncertaintyNotes": "There could be other unknown factors at play not captured in the incident data, such as network issues or third-party service failures that might have also contributed to the webhook delivery failures.",
+    "performanceMetrics": {
+      "latencySeconds": 8.269,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": -0.05,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-011",
-    "rootCauseHypothesis": "The incident may be related to a configuration error in the application settings, possibly during the migration to headless architecture, affecting the specified merchants.",
+    "rootCauseHypothesis": "The incident may be due to a configuration error related to the migration process, potentially affecting the configuration settings for the affected merchants M-009 and M-015 during the transition to headless architecture.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Review the configuration settings for affected merchants M-009 and M-015 to identify any discrepancies or errors.",
+        "description": "Review the configuration settings for the affected merchants to identify discrepancies or errors, and correct them as necessary.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Inform affected merchants about the ongoing investigation and provide guidance on any temporary workarounds, if applicable.",
+        "description": "Notify the affected merchants about the incident and the ongoing investigation to manage expectations.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The configuration error is isolated to the affected merchants and not systemic.",
-      "The issue is new and not a pre-existing one from the previous hosted environment."
+      "The configuration error is affecting only the merchants mentioned in the incident.",
+      "The incident data indicates that there are indeed issues that can be linked to the recent migration process."
     ],
-    "uncertaintyNotes": "The exact cause of the configuration error is unclear, and additional investigation may uncover more complex underlying issues."
+    "uncertaintyNotes": "The root cause hypothesis is based on limited incident data and may not encompass all potential external factors affecting the merchants. Additional data may be required to fully validate the hypothesis.",
+    "performanceMetrics": {
+      "latencySeconds": 6.233,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-012",
     "error": "LLM returned invalid JSON",
-    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-012\",\n  \"rootCauseHypothesis\": \"The latency issue may be due to increased load on the system or integration challenges with the headless architecture, impacting response times.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"Monitor system performance metrics to identify any spikes in load or resource utilization during the reported time window.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Investigate the recent changes associated with the migration to the headless architecture to identify any configuration issues or bottlenecks.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"high\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Communicate with the affected merchants (M-041, M-008) to gather more details on their experiences and any commonalities that may exist between them.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The latency issue is related to either the backend architecture or the load on the system.\",\n    \"The two affected merchants may have similar usage patterns contributing to the issue.\"\n  ],\n  \"uncertaintyNotes\": \"There is uncertainty regarding the exact cause of the latency, as the incident data is limited and may not fully capture all contributing factors.\"\n}\n```"
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-012\",\n  \"rootCauseHypothesis\": \"The latency issue may be related to increased load on the headless architecture, possibly due to recent updates or surges in traffic affecting the affected merchants.\",\n  \"confidenceLevel\": 0.6,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Investigate the performance metrics and logs for the affected merchants to identify any spikes in load or degradation in response times during the incident window.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"Implement temporary performance optimizations or scaling solutions such as load balancing to alleviate current latency issues while further diagnosis is conducted.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    }\n  ],\n  \"assumptions\": [\n    \"The latency issue is directly correlated with the architecture's responsiveness to current load conditions.\",\n    \"The affected merchants have not made any significant changes to their setups that would independently cause such latency.\"\n  ],\n  \"uncertaintyNotes\": \"The root cause is a hypothesis based on available data; actual user reports may vary. Additionally, the confidence level reflects the lack of comprehensive logs and metrics in the available data.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 5.174,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-013",
-    "rootCauseHypothesis": "The incident may be caused by a temporary failure in the API due to an increased load or a misconfiguration during the migration to headless architecture, affecting a small number of merchants.",
-    "confidenceLevel": 0.65,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Monitor API performance and logs for anomalies, focusing on the affected merchants to identify any patterns or errors that can help to pinpoint the cause.",
-        "requiresHumanApproval": false,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Communicate with the affected merchants to inform them of the ongoing investigation and provide any interim support they may need.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
-      },
-      {
-        "actionType": "mitigation",
-        "description": "If API overload is suspected, temporarily increase resources allocated to API handling or implement rate limiting for affected merchants to stabilize the service.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      }
-    ],
-    "assumptions": [
-      "The number of affected merchants is small, indicating the issue may not be widespread.",
-      "The API has recently been migrated and could be experiencing issues related to this transition."
-    ],
-    "uncertaintyNotes": "The root cause is not definitively known and the hypothesis is based on limited incident data and recent system changes. There may be other underlying issues contributing to the API errors that have not been captured in the incident report."
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-013\",\n  \"rootCauseHypothesis\": \"The incident may be related to a temporary disruption or misconfiguration in the API that affects multiple merchants within a short time frame. Given that the issue type is tagged as 'apiError', it is likely tied to either API rate limiting or conflicts in request handling.\",\n  \"confidenceLevel\": 0.75,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Investigate the API logs for any anomalies during the time window and check for rate limiting or concurrent request handling issues. Assess if there is a configuration error resulting in the 'apiError'.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Notify affected merchants about the ongoing investigation and the possibility of intermittent API issues, providing them with a support contact for urgent requests.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The reported API errors are consistent across the affected merchants.\",\n    \"The number of reported incidents is directly related to the API issue being experienced.\"\n  ],\n  \"uncertaintyNotes\": \"The exact nature of the 'apiError' is unspecified. This diagnosis is based on the assumption that the incident type correlates with recent changes in the API or its usage patterns. Additionally, without access to specific logs, some details about the incident remain speculative.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 5.703,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-014",
-    "rootCauseHypothesis": "The webhooks for the affected merchants might have failed to trigger due to a temporary service disruption or configuration issues in the new headless architecture.",
-    "confidenceLevel": 0.75,
+    "rootCauseHypothesis": "The missing webhook notifications may be due to a temporary connectivity issue between the webhook sender and receiver or misconfiguration in the webhook endpoint settings.",
+    "confidenceLevel": 0.7,
     "recommendedActions": [
       {
-        "actionType": "engineering",
-        "description": "Investigate the webhook delivery logs for merchants M-023 and M-046 to identify any failures or issues in the triggering process during the incident time window.",
+        "actionType": "support",
+        "description": "Investigate the webhook configuration settings for the affected merchants (M-023 and M-046) to ensure they are correct and have not been altered.",
         "requiresHumanApproval": true,
         "riskLevel": "low"
       },
       {
-        "actionType": "support",
-        "description": "Notify the affected merchants regarding the incident and provide them with updates on the investigation process.",
+        "actionType": "engineering",
+        "description": "Check system logs for the time window of the incident to identify any errors or connectivity issues that could explain the missing webhooks.",
         "requiresHumanApproval": false,
         "riskLevel": "medium"
       },
       {
         "actionType": "mitigation",
-        "description": "Implement a fallback mechanism or retry policy for webhook deliveries to minimize impact in future occurrences.",
-        "requiresHumanApproval": true,
-        "riskLevel": "high"
+        "description": "Implement a temporary logging mechanism to monitor future webhook activities in real-time to quickly identify and resolve similar issues.",
+        "requiresHumanApproval": false,
+        "riskLevel": "medium"
       }
     ],
     "assumptions": [
-      "The incident specifically affects webhook functionalities due to the nature of the error reported.",
-      "There is a possibility that this issue is isolated to the affected merchants and does not impact the entire system."
+      "The webhooks were previously functioning correctly before the incident.",
+      "The webhook settings have not changed recently without proper documentation.",
+      "The connectivity between services during the incident was stable outside of this issue."
     ],
-    "uncertaintyNotes": "The exact trigger for the webhook failure is currently unknown and could be due to various factors, including environmental changes or merchant-specific configurations."
+    "uncertaintyNotes": "There may be unknown changes in external factors or configurations that are not captured, which could affect webhook delivery. The root cause could also be multifactorial beyond connectivity and configuration.",
+    "performanceMetrics": {
+      "latencySeconds": 6.005,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-015",
-    "rootCauseHypothesis": "The incident is likely due to a configuration error related to the migration from hosted to headless architecture, possibly caused by misconfiguration in the new setup affecting the specific merchant 'M-018'.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Review configuration settings for the affected merchant 'M-018' to identify misconfigurations or discrepancies in the new system.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Communicate with the affected merchant to gather further details about the symptoms of the issue, which may assist in diagnosing the configuration error.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The 'configError' classification accurately describes the nature of the incident.",
-      "The issue is isolated to the affected merchant 'M-018', and no other merchants are impacted.",
-      "The time window of 0 minutes indicates an immediate issue that needs prompt attention."
-    ],
-    "uncertaintyNotes": "The exact nature of the configuration error is unknown due to incomplete detail in the incident report, leading to a degree of uncertainty in the root cause hypothesis."
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-015\",\n  \"rootCauseHypothesis\": \"The incident is likely caused by a misconfiguration in the headless architecture settings related to the affected merchant (M-018). This could involve incorrect API endpoints, missing configurations, or unhandled migration issues.\",\n  \"confidenceLevel\": 0.75,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Review the configuration settings for the affected merchant M-018 in the headless architecture to identify any discrepancies or misconfigurations.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Inform the affected merchant M-018 about the ongoing issue and provide assistance if they notice any related performance problems.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The incident is caused by a direct config error in relation to the headless migration.\",\n    \"The affected merchant has not made any custom changes that could be causing the error.\"\n  ],\n  \"uncertaintyNotes\": \"There is some uncertainty regarding whether the issue is due to the merchant's specific configuration or a broader issue with the migration process itself. The lack of additional incident reports may suggest this is an isolated case, but further analysis is necessary.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 5.493,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-016",
-    "rootCauseHypothesis": "The apiError is likely due to a temporary failure in the API gateway or a misconfiguration in the routing that affects a limited number of merchants during a very short time window.",
+    "rootCauseHypothesis": "The incident might be caused by an API endpoint experiencing issues due to the recent changes in the architecture during the migration to headless, potentially resulting in failures in integration or misconfiguration.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the logs for the API gateway and check for any anomalies or configuration issues that could have led to the apiError for the affected merchants.",
+        "description": "Investigate the API logs for affected merchants M-048 and M-021 to identify the specific error messages returned during the incident window.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants (M-048, M-021) to convey that we are investigating the issue and provide updates as necessary.",
-        "requiresHumanApproval": false,
+        "description": "Inform the affected merchants about the incident and provide them with a preliminary response while the investigation is ongoing.",
+        "requiresHumanApproval": true,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The incident is isolated to the reported merchants and does not affect the entire system.",
-      "The time window of 1 minute indicates a transient issue rather than a persistent problem."
+      "The API issue is linked to the recent migration and is not a result of underlying hardware or network problems.",
+      "The affected merchants are configured correctly in the new headless architecture."
     ],
-    "uncertaintyNotes": "The exact nature of the apiError is unknown as detailed logs are not provided. The root cause hypothesis is based on common scenarios associated with apiErrors in headless architectures."
+    "uncertaintyNotes": "The exact nature and scope of the API issues are unclear without further investigation into the logs and specific error types encountered.",
+    "performanceMetrics": {
+      "latencySeconds": 4.383,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-017",
-    "rootCauseHypothesis": "The checkout failures may be due to a temporary disruption in payment processing or an integration issue with the headless architecture during the migration phase, especially since multiple merchants are affected within a short time window.",
+    "rootCauseHypothesis": "The checkout failure may be due to a potential issue in the headless architecture API not properly processing checkout requests, possibly related to recent changes in the integration or caching issues that may affect multiple merchants simultaneously.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
-        "actionType": "support",
-        "description": "Alert the affected merchants (M-011, M-043, M-018) about the ongoing issue and provide them with a timeline for updates.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
-      },
-      {
         "actionType": "engineering",
-        "description": "Investigate logs and monitors for any anomalies in payment processing APIs or integration endpoints during the noted time window.",
+        "description": "Investigate the API logs for errors related to checkout processing during the specified time window and check for changes or anomalies in the codebase that could lead to failures.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
-        "actionType": "mitigation",
-        "description": "Temporarily utilize a fallback mechanism for payment processing if identified issues persist, to minimize impact on merchants.",
-        "requiresHumanApproval": true,
-        "riskLevel": "high"
+        "actionType": "support",
+        "description": "Notify affected merchants about the ongoing issue and inform them that we are investigating the checkout failures. Offer alternatives if possible.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The affected merchants are using the same payment processing services.",
-      "The checkout failures started and occurred within the 11-minute time window."
+      "The issue affects multiple merchants, indicating a systemic problem rather than isolated incidents.",
+      "The time window of 11 minutes suggests a transient issue, possibly related to a recent deployment or configuration change."
     ],
-    "uncertaintyNotes": "The diagnosis relies on the assumption that the problem is directly related to the payment processing system. There might be other contributing factors not visible in the current incident data."
+    "uncertaintyNotes": "While the hypothesis points to potential API issues, the exact root cause may be different and further investigation is needed. The confidence level indicates moderate certainty but there is still a significant possibility of other influencing factors.",
+    "performanceMetrics": {
+      "latencySeconds": 9.519,
+      "cpuTimeSeconds": 0.031,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-018",
-    "rootCauseHypothesis": "The webhooks necessary for communication between the affected merchants and the SaaS platform may have failed to deliver due to network issues or misconfiguration during the transition to headless architecture.",
-    "confidenceLevel": 0.75,
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-018\",\n  \"rootCauseHypothesis\": \"The missing webhook delivery may be due to a failure in the event triggering mechanism or temporary network issues affecting the webhook endpoints for the affected merchants.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Review the webhook delivery logs for M-030 and M-001 to identify if there were any errors during the scheduled time frame.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Notify affected merchants about the issue and gather any additional information they might have regarding the webhook setup.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The webhook system was functioning correctly prior to this incident.\",\n    \"The affected merchants have valid webhook configurations.\"\n  ],\n  \"uncertaintyNotes\": \"There is a lack of detailed logs or diagnostics from the webhook system that limits the ability to pinpoint the exact cause. Network issues or configuration errors are plausible but not confirmed.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 6.756,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-019",
+    "rootCauseHypothesis": "The latency issue may be related to the transition period during the migration to headless architecture, potentially causing delays in processing for the affected merchants.",
+    "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the status of the webhook services and check logs for any errors during the incident period.",
-        "requiresHumanApproval": false,
+        "description": "Investigate system logs and performance metrics during the reported time window to identify any bottlenecks or anomalies.",
+        "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
-        "actionType": "support",
-        "description": "Notify the affected merchants about the incident and provide updates as information becomes available.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
-      },
-      {
         "actionType": "mitigation",
-        "description": "Implement monitoring for webhook delivery performance to alert on similar issues in the future.",
+        "description": "Monitor the affected merchants' performance and implement temporary caching solutions if latency persists.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The webhook functionality has been migrated properly during the transition to headless architecture.",
-      "The affected merchants have correctly configured their webhook endpoints."
+      "The reported latency issue is directly affecting performance, as indicated by the tickets.",
+      "The affected merchants have similar configurations and usage patterns that make them susceptible to the same issues."
     ],
-    "uncertaintyNotes": "Lack of detailed logs may hinder pinpointing the exact cause, and external factors such as internet stability could also play a role."
+    "uncertaintyNotes": "There is uncertainty about whether the latency is directly caused by the architecture transition or by other underlying issues, as the incident data does not provide extensive context.",
+    "performanceMetrics": {
+      "latencySeconds": 5.767,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
-    "incidentId": "INC-019",
-    "rootCauseHypothesis": "The latency issue may be related to increased demand on the hosted architecture during the specified time window, possibly due to higher traffic from the affected merchants.",
+    "incidentId": "INC-020",
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-020\",\n  \"rootCauseHypothesis\": \"The configuration error may stem from an incorrect setup in the headless architecture that affects the affected merchants' individual configurations. Given the brief time window of the incident, it's likely related to a recent deployment or system change that was not properly propagated to all configurations.\",\n  \"confidenceLevel\": 0.75,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Review the configuration logs and recent deployment changes for the affected merchants to identify discrepancies or errors.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Notify affected merchants about the incident and the ongoing investigation, ensuring transparency and maintaining trust.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    },\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"Temporarily roll back the recent changes if they are confirmed to be the cause of the configuration errors to restore service while further investigation is conducted.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"high\"\n    }\n  ],\n  \"assumptions\": [\n    \"The configuration error is directly linked to the recent changes in the system or architecture.\",\n    \"The affected merchants are using similar configurations that may be interdependent.\"\n  ],\n  \"uncertaintyNotes\": \"The root cause is hypothesized based on the provided incident details. There is uncertainty regarding whether the issue is localized to specific merchants or if wider systemic problems exist.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 6.525,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-021",
+    "rootCauseHypothesis": "The checkout failures may be caused by issues in the headless architecture's communication between the frontend and backend services, possibly affecting the payment processing module or API interactions used during checkout.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate logs from affected merchants during the incident time window to identify any anomalies or errors that occurred in the transaction flow.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Notify affected merchants about the ongoing issue and provide them with a temporary workaround if possible.",
+        "requiresHumanApproval": true,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The issue is related to the changes made during the migration to headless architecture.",
+      "Affected merchants are experiencing similar issues due to a shared dependency or common service used in checkout.",
+      "There are no issues on the merchants' side, such as incorrect configurations or payment provider outages."
+    ],
+    "uncertaintyNotes": "The specific root cause may vary across the affected merchants as the incident data is limited. Additional system logs and merchant feedback will be necessary to further narrow down the exact cause.",
+    "performanceMetrics": {
+      "latencySeconds": 5.509,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-022",
+    "rootCauseHypothesis": "The incident may be caused by a temporary failure in the API endpoint affecting the specified merchants, possibly due to an increase in load or a recent deployment that introduced a bug.",
     "confidenceLevel": 0.6,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Monitor the server loads and performance metrics for the affected merchants to identify any resource bottlenecks.",
+        "description": "Investigate the API logs for errors during the incident timeframe to identify any patterns or specific error messages that could indicate the root cause.",
         "requiresHumanApproval": false,
         "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Inform the affected merchants about the ongoing latency issue and advise them to report any specific user experiences they encounter.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
       },
       {
         "actionType": "mitigation",
-        "description": "Increase resource allocation temporarily for the affected merchants during peak traffic to mitigate latency.",
-        "requiresHumanApproval": true,
-        "riskLevel": "high"
-      }
-    ],
-    "assumptions": [
-      "The issue is not due to a permanent architectural flaw and is likely tied to temporary traffic surges.",
-      "Only the specified merchants are affected, and no other external factors are influencing performance."
-    ],
-    "uncertaintyNotes": "There is uncertainty regarding whether the issue is strictly due to high traffic or if there are underlying systemic issues in the architecture. Additionally, the lack of full incident historical data limits the confidence in pinpointing the exact cause."
-  },
-  {
-    "incidentId": "INC-020",
-    "rootCauseHypothesis": "The configError may be due to a misconfiguration in the system settings or API endpoints affecting multiple merchants simultaneously during the migration process.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate the configuration settings for the affected merchants to identify discrepancies or incorrect parameters.",
+        "description": "Implement rate limiting or load balancing on the affected APIs to lessen the impact on the affected merchants until the root cause is identified.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants about the ongoing issue and provide interim support while the root cause is identified.",
+        "description": "Notify affected merchants of the incident and provide them with updates as more information becomes available, maintaining transparency.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The incidents are closely related to configuration issues due to the recent architecture migration.",
-      "All affected merchants are experiencing similar issues under the same configurations."
+      "The API errors are related to the recent changes or traffic patterns affecting the system.",
+      "There are no known external factors (like third-party integrations) influencing the API calls."
     ],
-    "uncertaintyNotes": "The root cause remains somewhat speculative as we do not have complete logs or configuration snapshots from the time of the incidents. Further investigation is needed to confirm the hypothesis."
+    "uncertaintyNotes": "Due to incomplete incident data, the exact cause of the API errors is uncertain. Different factors could contribute, and further investigation is required to clarify.",
+    "performanceMetrics": {
+      "latencySeconds": 5.02,
+      "cpuTimeSeconds": 0.031,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
-    "incidentId": "INC-021",
-    "rootCauseHypothesis": "A potential issue with the checkout processing logic or integration may be causing the checkout failures for multiple affected merchants within the short time window.",
+    "incidentId": "INC-023",
+    "rootCauseHypothesis": "The incident likely arose due to a missing or misconfigured webhook for the affected merchants during the migration from hosted to headless architecture.",
     "confidenceLevel": 0.75,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the checkout processing logic and integration for the affected merchants. Look for any recent code changes or deployment issues that could align with the timing of the incident.",
-        "requiresHumanApproval": false,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Inform affected merchants about the issue and provide them with an estimated timeline for updates on the resolution. This keeps them informed and helps maintain trust.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
-      },
-      {
-        "actionType": "mitigation",
-        "description": "If possible, roll back to a previous stable version of the checkout module while the issue is investigated to minimize impact on affected merchants.",
-        "requiresHumanApproval": true,
-        "riskLevel": "high"
-      }
-    ],
-    "assumptions": [
-      "The checkout process relies on a single codebase that affects all merchants similarly.",
-      "Recent changes were made to the checkout processing that could have introduced bugs."
-    ],
-    "uncertaintyNotes": "There is uncertainty regarding the exact deployment timeline and whether the issue is related to the codebase or perhaps external factors (e.g., third-party payment gateway issues). The confidence level is somewhat high but not definitive."
-  },
-  {
-    "incidentId": "INC-022",
-    "rootCauseHypothesis": "The incident may be caused by a temporary API outage or degraded performance that impacted requests from the affected merchants.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate server logs and performance metrics during the incident time window to identify any anomalies or downtime related to the API.",
+        "description": "Investigate the webhook configuration for merchants M-048 and M-045 to identify any missing or misconfigured settings that may have caused webhook delivery issues.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants about the incident and provide a timeline for investigation.",
+        "description": "Communicate with affected merchants to inform them of the ongoing investigation and provide updates as necessary.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The API is designed to handle multiple simultaneous requests from merchants.",
-      "The affected merchants are using the API within expected parameters."
+      "The webhook system is critical for delivering updates to the affected merchants.",
+      "The webhook configuration should be identical for all merchants unless specified otherwise."
     ],
-    "uncertaintyNotes": "The exact cause of the API error is not fully known and may vary depending on external factors not logged or monitored. Further investigation is needed to confirm the root cause."
-  },
-  {
-    "incidentId": "INC-023",
-    "rootCauseHypothesis": "The missing webhooks may be related to either a misconfiguration in the webhook delivery system or an issue in the backend processing handling the webhook events.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Review the webhook delivery configurations and logs for M-048 and M-045 to identify any errors or misconfigurations during the time window.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants M-048 and M-045 about the incident and provide status updates regularly until resolution.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "Merchants M-048 and M-045 are using the same webhook configuration.",
-      "The issue occurred only during the specified time window."
-    ],
-    "uncertaintyNotes": "Further investigation is required to determine the exact cause of the webhook failure; logs may not provide complete data due to potential downtime or misconfigurations."
+    "uncertaintyNotes": "There may be other underlying factors contributing to the issue, such as network issues, which are not evident from the available incident data.",
+    "performanceMetrics": {
+      "latencySeconds": 4.714,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-024",
     "error": "LLM returned invalid JSON",
-    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-024\",\n  \"rootCauseHypothesis\": \"The latency issue could potentially stem from high server load or inefficient database queries affecting multiple merchants concurrently.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Monitor server load and database performance metrics to identify potential bottlenecks.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Inform affected merchants about the ongoing issue and provide an estimated time for an update.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The latency issues are affecting multiple merchants simultaneously.\",\n    \"The headless architecture migration has not introduced significant new performance issues.\"\n  ],\n  \"uncertaintyNotes\": \"There is uncertainty regarding whether external factors (e.g., network issues) could be contributing to the latency. The root cause might also be a mix of several factors rather than a single issue.\"\n}\n```"
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-024\",\n  \"rootCauseHypothesis\": \"The latency issue may be caused by increased traffic during the incident time window, potentially overwhelming the infrastructure, or due to misconfiguration in the newly migrated headless architecture components.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Monitor the system performance metrics to identify any bottlenecks and verify the configuration settings of the headless architecture components.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Inform affected merchants about the incident and the ongoing investigation to keep them updated.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"low\"\n    },\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"Consider implementing rate limiting for incoming requests temporarily to alleviate latency issues while further investigation is conducted.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    }\n  ],\n  \"assumptions\": [\n    \"The latency issue is not a result of external system outages since the issue is isolated to a specific time window and affects multiple merchants.\",\n    \"The migrated headless architecture is functionally complete but may still have performance tuning requirements that were not fully addressed.\"\n  ],\n  \"uncertaintyNotes\": \"There is uncertainty regarding the exact cause of the latency, and the recommended actions are based on common issues associated with traffic load and migration challenges. Without further data, the root cause hypothesis remains speculative.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 6.347,
+      "cpuTimeSeconds": 0.031,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-025",
-    "error": "LLM returned invalid JSON",
-    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-025\",\n  \"rootCauseHypothesis\": \"The checkout failure may be caused by a configuration issue in the payment processing API or integration problems with the headless architecture affecting the merchants listed.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Investigate logs and error messages from the checkout processes of affected merchants to identify patterns.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Contact affected merchants to gather detailed error messages and checkout experiences they encountered.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"low\"\n    },\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"Consider temporarily providing alternative payment options to affected merchants until the issue is resolved.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    }\n  ],\n  \"assumptions\": [\n    \"The merchants affected have similar checkout configurations and use the same payment processing integration.\",\n    \"The incident occurred during peak operation hours leading to multiple tickets being raised.\"\n  ],\n  \"uncertaintyNotes\": \"The root cause is hypothesized based on the incident type and ticket count but is not confirmed due to lack of specific error details or logs at this moment.\"\n}\n```"
-  },
-  {
-    "incidentId": "INC-026",
-    "rootCauseHypothesis": "The API error affecting multiple merchants could be due to an increase in traffic coinciding with the migration to a headless architecture, leading to unhandled exceptions or downtime in certain API endpoints.",
-    "confidenceLevel": 0.6,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Monitor the API performance metrics to identify potential bottlenecks and errors arising during the peak traffic periods. Investigate logs for error messages related to the affected merchants.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "mitigation",
-        "description": "Implement rate limiting or temporary caching strategies on the API endpoints that are experiencing errors to alleviate the immediate pressure on the system.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      }
-    ],
-    "assumptions": [
-      "The API endpoints for the affected merchants are operating under similar load conditions.",
-      "The headless architecture is fully deployed and functional across the platform."
-    ],
-    "uncertaintyNotes": "The root cause diagnosis is based on general patterns observed in similar incidents. Without complete logs or specific error messages, the hypothesis remains speculative and may not capture the full scope of the issue."
-  },
-  {
-    "incidentId": "INC-027",
-    "error": "LLM returned invalid JSON",
-    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-027\",\n  \"rootCauseHypothesis\": \"The incident may have been caused by a failure in the webhook delivery mechanism, possibly due to server overload, configuration issues, or network interruptions affecting the headless architecture transition.\",\n  \"confidenceLevel\": 0.65,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Reach out to the affected merchants (M-023, M-009, M-016) to gather more information about their experiences and any error logs related to the webhook failures.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"low\"\n    },\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Investigate the webhook delivery logs during the incident window to identify any patterns or failures. Also, check the infrastructure health at that time.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"mitigation\",\n      \"description\": \"If a specific configuration issue is identified, apply temporary fixes and monitor to prevent further incidents while a permanent solution is developed.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    }\n  ],\n  \"assumptions\": [\n    \"Webhook configuration settings have not been recently changed or misconfigured.\",\n    \"All affected merchants use the same webhook service and follow similar setup procedures.\",\n    \"The incidents are correlated to the migration phase of the architecture.\"\n  ],\n  \"uncertaintyNotes\": \"The confidence level is moderate due to potential unknown variables in the infrastructure changes and third-party dependencies. More detailed logs from the time of the incident would provide better insight.\"\n}\n```"
-  },
-  {
-    "incidentId": "INC-028",
-    "rootCauseHypothesis": "The configError suggests that there might be an issue with the configuration settings applied to the affected merchants. It could be due to a recent deployment or a change in the config management system that did not propagate correctly or contained errors.",
+    "rootCauseHypothesis": "The checkout failure may be due to an issue in the payment processing gateway or an incompatibility with the headless architecture, potentially triggered by recent code changes or configurations affecting the affected merchants.",
     "confidenceLevel": 0.75,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Review the configuration settings for the affected merchants (M-001, M-045, M-030) to identify discrepancies or errors that could be causing the configError.",
+        "description": "Investigate the payment processing gateway integration and check for any recent changes or errors in the configuration that might be causing the checkout failures.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify affected merchants about the ongoing investigation and offer assistance in case they encounter any issues due to the configuration error.",
+        "description": "Notify the affected merchants (M-040, M-050, M-001) about the issue and provide a temporary troubleshooting guide to minimize impact.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The configError is related to changes in the configuration management system.",
-      "The affected merchants are experiencing similar symptoms due to shared configuration settings."
+      "The incident is related to the checkout process specifically rather than broader system outages.",
+      "The affected merchants are reliant on a shared payment processing method that could be the source of the issue.",
+      "Data regarding the incident is complete for the analysis based on provided ticket count."
     ],
-    "uncertaintyNotes": "The exact cause of the configError is not definitively known without detailed logs or further investigation. There may be underlying issues with the deployment process or individual merchant settings that are not accounted for."
+    "uncertaintyNotes": "There might be external factors affecting the payment gateway that are not captured in the incident details. Additionally, we lack detailed logs that could indicate the specific cause of failure.",
+    "performanceMetrics": {
+      "latencySeconds": 5.657,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-026",
+    "rootCauseHypothesis": "The incident may be due to a transient issue with the API, possibly related to service overload or configuration changes during the transition to headless architecture.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate the API logs for error rates and performance metrics during the time window to identify potential bottlenecks or specific error patterns.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Communicate with affected merchants to inform them of the ongoing investigation and provide regular updates.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "API errors may be related to load or configuration issues.",
+      "All affected merchants experience similar errors under similar conditions."
+    ],
+    "uncertaintyNotes": "There is uncertainty regarding whether the root cause is indeed related to the headless architecture migration or if it is an isolated incident. Without specific error codes, it is challenging to pinpoint the exact cause.",
+    "performanceMetrics": {
+      "latencySeconds": 4.301,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.06,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-027",
+    "rootCauseHypothesis": "The missing webhooks may have resulted from a temporary failure in the webhook delivery system during the incident time window, possibly due to network issues or an increase in webhook traffic that the system couldn't handle.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate the webhook delivery logs for the affected merchants to identify if there were any errors or failed attempts during the incident time window.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "mitigation",
+        "description": "Implement monitoring alerts for webhook failures to quickly catch similar issues in the future.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The webhook functionality was functioning correctly prior to the incident.",
+      "The incident affected a limited number of merchants and was isolated within a specific time frame."
+    ],
+    "uncertaintyNotes": "There may be external factors influencing webhook delivery that are not captured in the logs, and it's unclear if this was a one-time occurrence or indicative of a larger, systemic issue.",
+    "performanceMetrics": {
+      "latencySeconds": 5.433,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-028",
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-028\",\n  \"rootCauseHypothesis\": \"The most likely cause of the configuration error is a misconfiguration in the settings for the affected merchants during the recent migration to headless architecture. This could result from either incorrect parameter values being applied or discrepancies between the legacy and new configuration requirements.\",\n  \"confidenceLevel\": 0.75,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Review the configuration settings for merchants M-001, M-045, and M-030 to identify and correct any discrepancies or errors that may be causing the configError.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Communicate with affected merchants to inform them of the ongoing investigation and any potential impacts on their services.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The configuration error is not impacting more than the reported merchants.\",\n    \"The incident reported in the ticket count reflects a genuine pattern of the issue that requires actionable responses.\"\n  ],\n  \"uncertaintyNotes\": \"There may be other contributing factors not captured in the incident summary or variables that could impact the root cause that have not been disclosed. Further investigation may be needed to validate the diagnosis.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 5.941,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.02,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-029",
-    "rootCauseHypothesis": "The latency issue may be due to network performance degradation affecting communication between the headless architecture components and the merchants' systems, or possibly due to increased load during the incident time window.",
+    "rootCauseHypothesis": "The latency issue may be related to network congestion or server overload, likely exacerbated by an increased load during peak usage times within the 30-minute window.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the network performance metrics and server loads during the incident window to identify bottlenecks or failures.",
+        "description": "Investigate server performance metrics and network traffic logs for the time window to identify potential overload or bottlenecks.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Communicate with affected merchants to gather additional logs and behavior patterns that occurred simultaneously to the latency issue for better analysis.",
-        "requiresHumanApproval": true,
+        "description": "Communicate with affected merchants to acknowledge the issue and provide a status update while further investigation is ongoing.",
+        "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "Latency issues could be related to system overload or network failures.",
-      "Affected merchants were all experiencing the issues simultaneously."
+      "The latency issues are not occurring due to individual merchant configurations.",
+      "There is no ongoing maintenance or known issues unrelated to the current incident that could be affecting performance."
     ],
-    "uncertaintyNotes": "The root cause hypothesis is based on available incident data; without comprehensive logging and monitoring data, there is uncertainty in pinpointing the exact source of the latency."
+    "uncertaintyNotes": "The exact source of latency is not confirmed due to incomplete incident data and the possibility of multiple factors contributing to the issue.",
+    "performanceMetrics": {
+      "latencySeconds": 5.999,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.03,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-030",
-    "rootCauseHypothesis": "The missing webhooks may be due to a configuration issue in the webhook endpoint settings or a transient error in the headless architecture that failed to dispatch the webhooks to the affected merchants.",
+    "rootCauseHypothesis": "The incident may be due to missing webhooks triggered by changes in the application architecture, possibly related to the migration to headless architecture.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the configuration of webhook endpoints for the affected merchants and check the logs for errors during the incident timeframe to identify any potential failures in dispatching webhooks.",
+        "description": "Investigate the webhook delivery logs for the affected merchants to identify any failures or timeouts during the incident time window.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify the affected merchants about the incident and provide estimated timeframes for resolution while ensuring they are aware of the missing webhook notifications.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The merchants have consistent configurations for webhooks and that the incidents are not due to individual merchant settings.",
-      "The incident is localized and does not affect the broader system architecture or external factors."
-    ],
-    "uncertaintyNotes": "While we suspect configuration issues or transient errors, without further investigation we cannot conclusively identify the root cause. The affected merchants' setup could also lead to this issue independently of the central system."
-  },
-  {
-    "incidentId": "INC-031",
-    "rootCauseHypothesis": "The most likely root cause of the API error is a temporary service disruption affecting the underlying infrastructure or a recent change in the API that may have introduced a bug, especially given the limited ticket count over a defined time window.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate server logs and monitor API performance during the incident time window to identify potential causes like service interruptions or recent changes.",
-        "requiresHumanApproval": false,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Inform affected merchants (M-005, M-035) of the ongoing issue and provide updates as further information becomes available.",
+        "description": "Notify the affected merchants about the incident, assuring them that an investigation is underway.",
         "requiresHumanApproval": true,
         "riskLevel": "low"
       },
       {
         "actionType": "mitigation",
-        "description": "Prepare to rollback any recent changes to the API if a bug is confirmed, ensuring minimal disruption to services.",
+        "description": "Implement fallback mechanisms to ensure critical updates are still communicated to the affected merchants in case of webhook failures.",
+        "requiresHumanApproval": false,
+        "riskLevel": "high"
+      }
+    ],
+    "assumptions": [
+      "The missing webhooks are related to the recent architectural changes and not due to configuration errors.",
+      "The incident affects only the specified merchants within the defined time window."
+    ],
+    "uncertaintyNotes": "Details on specific webhook configurations and the state of the migration process are incomplete, making it challenging to ascertain the exact cause.",
+    "performanceMetrics": {
+      "latencySeconds": 7.651,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-031",
+    "rootCauseHypothesis": "The apiError could be due to insufficient API rate limits or a temporary outage in the API service affecting the merchant's requests during the specified time window.",
+    "confidenceLevel": 0.75,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate API logs for error patterns specifically during the 20-minute time window to identify possible rate limiting or service outage incidents.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Communicate with affected merchants to gather additional information regarding the specific errors they encountered, which may help pinpoint the issue.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The reported issue is consistent with observed API behavior during high load periods.",
+      "Affected merchants have experienced errors related to API calls within the noted time frame."
+    ],
+    "uncertaintyNotes": "There may be external factors affecting the API calls, such as network issues on the merchant's side or third-party integrations that are not being reported.",
+    "performanceMetrics": {
+      "latencySeconds": 5.098,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-032",
+    "rootCauseHypothesis": "The checkout failures may be due to issues with the payment processing module, possibly stemming from recent changes in the API or an integration error with one of the affected merchants.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate the payment processing API for error logs or issues that correlate with the time of the failures reported by affected merchants.",
+        "requiresHumanApproval": false,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Notify the affected merchants of the ongoing investigation and provide them with a status update, advising them to be prepared for potential solutions or alternative payment methods.",
+        "requiresHumanApproval": true,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The checkout failures are related to a common factor affecting all affected merchants within the defined time window.",
+      "The payment processing system was recently updated or integrated, impacting merchants using this system."
+    ],
+    "uncertaintyNotes": "There may be multiple underlying issues contributing to the checkout failures. Without complete logs or additional context, the specific root cause remains speculative.",
+    "performanceMetrics": {
+      "latencySeconds": 5.067,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-033",
+    "rootCauseHypothesis": "The latency issues could be due to increased load on the system from the affected merchants or potential network connectivity problems affecting the responsiveness of the platform.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate system performance metrics and logs during the time window to identify any bottlenecks or anomalies.",
+        "requiresHumanApproval": false,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Notify affected merchants about the ongoing latency issues and provide them with estimated resolution times.",
+        "requiresHumanApproval": true,
+        "riskLevel": "low"
+      },
+      {
+        "actionType": "mitigation",
+        "description": "Implement temporary rate limiting or caching strategies while investigating the root cause to alleviate strain on the system.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      }
+    ],
+    "assumptions": [
+      "The incident is affecting multiple merchants within a short time window, suggesting a systemic issue rather than isolated problems.",
+      "User load on the system may have increased unexpectedly, contributing to the latency."
+    ],
+    "uncertaintyNotes": "There is uncertainty about whether the root cause is purely related to system load or if there are other underlying issues such as external network disruptions. Further investigation is needed to confirm.",
+    "performanceMetrics": {
+      "latencySeconds": 5.224,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-034",
+    "rootCauseHypothesis": "The incident is likely caused by a misconfiguration in the new headless architecture that is affecting the merchant services, possibly due to discrepancies in environment settings or integration points.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Review the configuration settings for the affected merchants (M-020, M-027, M-011) to identify any discrepancies from the expected architecture setup.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Inform the affected merchants about the ongoing investigation and provide updates regarding the resolution timeline.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The incident is related to configuration issues given the 'configError' issue type.",
+      "The affected merchants share similar settings that may lead to the same error."
+    ],
+    "uncertaintyNotes": "There may be other underlying causes for the configError that are not immediately evident. The exact nature of the configuration issues is not known until further investigation is conducted.",
+    "performanceMetrics": {
+      "latencySeconds": 6.241,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-035",
+    "rootCauseHypothesis": "The API errors may be caused by an increase in request load or a recent deployment that introduced a bug affecting the API endpoints used by the affected merchants.",
+    "confidenceLevel": 0.75,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate the API logs during the incident time window to determine if there was an unusual spike in load or errors.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "mitigation",
+        "description": "If possible, temporarily scale the API resources to handle the load while the investigation is ongoing.",
+        "requiresHumanApproval": false,
+        "riskLevel": "medium"
+      }
+    ],
+    "assumptions": [
+      "The reported ticket count is accurate and relates to the API error incidents.",
+      "The affected merchants are experiencing similar issues related to API requests.",
+      "No additional incidents from other systems are influencing the current API performance."
+    ],
+    "uncertaintyNotes": "The confidence level for the hypothesis is moderate due to lack of specific logs or metrics to confirm the increased load or identify a specific bugs in recent deployments.",
+    "performanceMetrics": {
+      "latencySeconds": 5.255,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-036",
+    "rootCauseHypothesis": "The latency issues could be attributed to network configuration changes or resource contention within the hosting environment, possibly exacerbated by recent migrations to a headless architecture.",
+    "confidenceLevel": 0.65,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate recent network changes and monitor resource usage on the affected servers to identify bottlenecks.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Communicate with the affected merchants (M-005, M-016, M-047) to inform them of the ongoing investigation and set expectations regarding resolution times.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      },
+      {
+        "actionType": "mitigation",
+        "description": "Temporarily scale up resources or implement load balancing to alleviate immediate latency issues while further diagnostics are performed.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      }
+    ],
+    "assumptions": [
+      "The affected merchants are experiencing similar latency issues due to shared resources within the hosting environment.",
+      "The incident is related to external factors such as network latency or internal server performance issues."
+    ],
+    "uncertaintyNotes": "There is uncertainty regarding whether the root cause is related to configuration changes or load issues, as well as the specific impact of the headless architecture migration.",
+    "performanceMetrics": {
+      "latencySeconds": 7.372,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-037",
+    "rootCauseHypothesis": "The checkout failures may be attributed to a potential issue in the payment gateway integration or session management during the checkout process, possibly due to changes during the migration to headless architecture.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Investigate the integration of the payment gateway and review logs from affected merchants for any errors or timeouts during the checkout process.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Notify affected merchants about the ongoing incident and provide status updates until resolution.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      },
+      {
+        "actionType": "mitigation",
+        "description": "Implement a temporary fallback mechanism for checkout, if feasible, to reduce disruptions for affected merchants.",
         "requiresHumanApproval": true,
         "riskLevel": "high"
       }
     ],
     "assumptions": [
-      "The incidents reported are related to API errors and not other unrelated system issues.",
-      "The impact is limited to the specified merchants without wider implications.",
-      "There have been recent updates or deployments that could be related."
+      "The issue is isolated to specific merchants experiencing checkout failures.",
+      "The checkout process was recently modified during the migration, which could have introduced new issues."
     ],
-    "uncertaintyNotes": "While there are indicators pointing to potential service disruption or recent API changes as causes, lack of complete incident data limits definitive diagnosis. Further investigation is required to confirm the root cause."
-  },
-  {
-    "incidentId": "INC-032",
-    "rootCauseHypothesis": "The checkout failures may be due to issues in the payment processing integration or a problem with the order validation logic in the new headless architecture.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate the payment processing logs and order validation processes for the affected merchants to identify any errors or anomalies that could lead to checkout failures.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants of the incident and recommend they temporarily enable alternative payment options, if available, while the root cause is being investigated.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      },
-      {
-        "actionType": "mitigation",
-        "description": "Implement temporary retries for checkout processes to see if this resolves the immediate failures while diagnostic efforts proceed.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      }
-    ],
-    "assumptions": [
-      "The checkout failures are linked to the new headless architecture since the incident is recent and multiple merchants are affected.",
-      "The payment processing system has not changed aside from the integration required for the headless architecture."
-    ],
-    "uncertaintyNotes": "There may be additional factors involved that are not yet visible. The exact cause is not confirmed, and further investigation may reveal more complex interactions that need to be accounted for."
-  },
-  {
-    "incidentId": "INC-033",
-    "rootCauseHypothesis": "The latency issue may be related to high traffic volume or inefficient database queries affecting response times for the affected merchants.",
-    "confidenceLevel": 0.65,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Analyze server logs and database queries for performance bottlenecks during the incident time window.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants of the ongoing latency issue and assure them that we are investigating.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      },
-      {
-        "actionType": "mitigation",
-        "description": "Implement temporary caching strategies to alleviate latency while investigating the root cause.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      }
-    ],
-    "assumptions": [
-      "The reported latency issue is related to the new headless architecture migration.",
-      "The affected merchants have similar workload patterns, which may exacerbate the latency under high load."
-    ],
-    "uncertaintyNotes": "There is uncertainty whether the problem is due to infrastructure limits, code inefficiencies, or external factors such as network issues. The actual cause may vary, requiring further investigation."
-  },
-  {
-    "incidentId": "INC-034",
-    "rootCauseHypothesis": "The incident appears to be related to a configuration error affecting the integration of the affected merchants with the new headless architecture. This may be due to outdated configuration settings that are incompatible with the new architecture.",
-    "confidenceLevel": 0.75,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Conduct a review of the configuration settings for the affected merchants to identify inconsistencies or outdated parameters that may not align with the new architecture.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify the affected merchants about the potential configuration issue and advise them to check their integration settings while the investigation is ongoing.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The reported incidents are accurately linked to configuration issues and are not related to network or server outages.",
-      "The merchants have not made any unrelated changes that could also lead to integration issues."
-    ],
-    "uncertaintyNotes": "There is a moderate level of uncertainty regarding whether the configuration settings are the definitive root cause, as other external factors could also contribute to the issue."
-  },
-  {
-    "incidentId": "INC-035",
-    "rootCauseHypothesis": "The API errors are likely caused by a temporary outage in the services that the API relies on or a potential bug in the new headless architecture that affects specific merchants during the migration.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate logs for the past 29 minutes to identify any service outages or errors impacting the affected merchants.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify the affected merchants of the ongoing issue and that it is being investigated.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The incidents reported by merchants are related and occurred within the same time frame.",
-      "The migration to headless architecture might have introduced issues that are specific to certain merchant configurations."
-    ],
-    "uncertaintyNotes": "There may be other external factors or issues not visible from internal logs, such as network problems or third-party service dependencies that could be contributing to the API errors."
-  },
-  {
-    "incidentId": "INC-036",
-    "rootCauseHypothesis": "The latency issues reported by affected merchants may stem from increased traffic due to recent marketing campaigns or a surge in demand, causing resource constraints in the legacy hosted infrastructure during the migration to headless architecture.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Monitor system performance metrics to identify bottlenecks and consider scaling resources if any spikes in traffic are detected.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Communicate with impacted merchants to inform them that we are investigating the reported latency issues.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The latency issues are related to infrastructure capacity as we transition to headless architecture.",
-      "The affected merchants are experiencing similar symptoms based on the incident reports."
-    ],
-    "uncertaintyNotes": "The exact cause of the latency is unclear without further monitoring data and may be influenced by various external factors not currently accounted for."
-  },
-  {
-    "incidentId": "INC-037",
-    "rootCauseHypothesis": "The checkout failures may be related to a recent change in the payment processing API that affects multiple merchants within a short time frame.",
-    "confidenceLevel": 0.75,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate recent changes to the payment processing API and analyze logs from the affected merchants during the incident's time window.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants about the incident and advise them to temporarily monitor their payment gateways for any anomalies.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "All affected merchants rely on the same payment processing API.",
-      "The issue is likely due to a recent deployment affecting multiple users simultaneously."
-    ],
-    "uncertaintyNotes": "The exact root cause cannot be determined without further log analysis. There is a possibility that other external factors may have contributed to the checkout failures."
+    "uncertaintyNotes": "There is uncertainty around whether the issue is stemming from the payment gateway or an unrelated system error, as logs and more data might be required for a conclusive diagnosis.",
+    "performanceMetrics": {
+      "latencySeconds": 6.125,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-038",
-    "rootCauseHypothesis": "The webhook events may not be firing due to a configuration issue or an outage in the webhook service responsible for delivering events to the affected merchants.",
+    "rootCauseHypothesis": "The incident appears to be related to a failure in the webhook delivery system, possibly due to a configuration issue or temporary network outages affecting the services that process webhook events.",
     "confidenceLevel": 0.7,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Check the webhook service logs to identify any failed deliveries or configuration errors that might have led to the missing webhook events.",
+        "description": "Investigate the logs for webhook failures during the incident time window to identify potential issues affecting delivery.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify the affected merchants about the incident and provide updates regarding the investigation.",
-        "requiresHumanApproval": false,
+        "description": "Notify affected merchants regarding the incident and assure them that we are actively working on resolving the issue.",
+        "requiresHumanApproval": true,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The webhook service is designed to inform merchants of relevant events without disruption.",
-      "All affected merchants have valid configurations and capabilities to receive webhooks."
+      "The webhook service was functioning normally prior to the incident.",
+      "The affected merchants were expecting webhook notifications during the incident time frame."
     ],
-    "uncertaintyNotes": "There could be other underlying issues contributing to the webhook failures, such as network issues or code changes in the recent deployment that haven't been documented in the incident data."
+    "uncertaintyNotes": "The exact cause of the webhook failures is not confirmed, as logs may not provide complete insights due to possible transient errors or missing data.",
+    "performanceMetrics": {
+      "latencySeconds": 4.326,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-039",
-    "rootCauseHypothesis": "The incident may be due to a temporary overload or misconfiguration in the API that caused errors for a subset of merchants within the specified time window.",
-    "confidenceLevel": 0.6,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate API logs for the time window of the incident to identify specific error messages and trends. This will help pinpoint if it's an overload, a specific merchant issue, or a configuration error.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants about the incident and provide them with interim measures or support until the root cause is fully investigated.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The reported errors are not caused by external factors such as network issues on the merchants' end.",
-      "The API was fully operational prior to the incident, and no recent code changes or deployments were made that could have triggered these errors."
-    ],
-    "uncertaintyNotes": "There is uncertainty regarding the specific nature of the errors affecting the API. The error logs and data may provide better insights, but without immediate access to those logs, the root cause remains an educated guess."
-  },
-  {
-    "incidentId": "INC-040",
-    "rootCauseHypothesis": "The latency issue may be related to underlying performance degradation in the database layer during the migration to headless architecture. The increase in latency could also be linked to the load from the affected merchants or infrastructure bottlenecks.",
-    "confidenceLevel": 0.6,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Analyze the database performance metrics during the incident time window to identify any bottlenecks or anomalies.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify affected merchants about the latency issue and keep them updated on the investigation progress.",
-        "requiresHumanApproval": true,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The latency issue is affecting only the specified merchants and may not be a system-wide problem.",
-      "The architecture migration process has introduced potential performance issues that could be isolated and analyzed."
-    ],
-    "uncertaintyNotes": "There may be other unreported incidents or external factors contributing to the latency, and the metrics available for analysis could be incomplete or affected by ongoing changes."
-  },
-  {
-    "incidentId": "INC-041",
-    "rootCauseHypothesis": "The incident may have been triggered by a configuration error in the migration process, impacting multiple merchants simultaneously. This could be caused by incorrect or missing configuration settings in the headless architecture deployment.",
+    "rootCauseHypothesis": "There may be an issue with the API endpoint configuration or a temporary service outage affecting multiple merchants, leading to the apiError.",
     "confidenceLevel": 0.75,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Review the configuration settings for the impacted merchants and compare them against the correct settings for the headless architecture. Identify any discrepancies and rectify them.",
+        "description": "Investigate the API endpoint for potential misconfigurations or outages and ensure that all services are operational.",
         "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Notify the affected merchants of the incident and provide them with updates while the issue is being investigated.",
+        "description": "Notify affected merchants about the issue and provide them with a timeline for resolution.",
         "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The configuration error has a direct relationship with the headless architecture deployment.",
-      "All affected merchants are using similar configurations."
+      "The apiError may stem from recent changes in the API or from the load on the services at the time of the incidents.",
+      "The affected merchants are indeed facing issues with the same API endpoint."
     ],
-    "uncertaintyNotes": "The exact nature of the configuration error is not fully known due to incomplete incident data, and there may be additional factors contributing to the issue that are not captured here."
+    "uncertaintyNotes": "There are several potential underlying issues such as connectivity, configuration errors, or load-related problems, so the root cause is not definitively identified yet.",
+    "performanceMetrics": {
+      "latencySeconds": 4.674,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-040",
+    "rootCauseHypothesis": "The latency issue may be caused by temporary network congestion or server resource contention affecting the API response times for the affected merchants.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Monitor server performance metrics and network traffic for the affected merchants during the incident time window to gather data on potential congestion or resource issues.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      },
+      {
+        "actionType": "mitigation",
+        "description": "Implement caching mechanisms for frequently accessed resources to reduce load and improve response times.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      }
+    ],
+    "assumptions": [
+      "The incident reports from affected merchants are accurate and reflect actual latency issues.",
+      "Existing monitoring tools are configured correctly to capture relevant performance data."
+    ],
+    "uncertaintyNotes": "The exact root cause of the latency issue is not confirmed, as there may be undiagnosed environmental factors or external dependencies that were not captured in the incident data.",
+    "performanceMetrics": {
+      "latencySeconds": 5.163,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+  },
+  {
+    "incidentId": "INC-041",
+    "rootCauseHypothesis": "The incident likely stems from a misconfiguration in the settings affecting the specified merchants, possibly during migration to a headless architecture.",
+    "confidenceLevel": 0.7,
+    "recommendedActions": [
+      {
+        "actionType": "engineering",
+        "description": "Review and validate the configuration settings applied to the affected merchants to identify any discrepancies or errors.",
+        "requiresHumanApproval": true,
+        "riskLevel": "medium"
+      },
+      {
+        "actionType": "support",
+        "description": "Notify affected merchants about the ongoing incident and provide guidance on any immediate steps they can take.",
+        "requiresHumanApproval": false,
+        "riskLevel": "low"
+      }
+    ],
+    "assumptions": [
+      "The reported 'configError' is related to recent configuration changes made during the migration process.",
+      "The affected merchants are facing similar issues due to a shared configuration setting."
+    ],
+    "uncertaintyNotes": "The root cause is hypothesized based on the limited information provided. There may be other underlying issues not yet identified that could influence the incident.",
+    "performanceMetrics": {
+      "latencySeconds": 5.143,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.0,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-042",
-    "rootCauseHypothesis": "The checkout failure could likely be due to an integration issue with payment processing or an incomplete data migration related to the headless architecture implementation.",
-    "confidenceLevel": 0.7,
+    "rootCauseHypothesis": "The checkout failure may be caused by a misconfiguration in the payment gateway or an issue with the product availability in the catalog for merchant M-034.",
+    "confidenceLevel": 0.6,
     "recommendedActions": [
       {
         "actionType": "engineering",
-        "description": "Investigate the logs for payment integration errors and confirm the integrity of the data mapping for the migratory processes.",
-        "requiresHumanApproval": false,
+        "description": "Investigate the payment gateway integration to ensure it is properly configured and operational.",
+        "requiresHumanApproval": true,
         "riskLevel": "medium"
       },
       {
         "actionType": "support",
-        "description": "Communicate with the affected merchant (M-034) to gather additional information about the checkout process and guide them on workaround solutions until the issue is resolved.",
-        "requiresHumanApproval": true,
+        "description": "Reach out to the affected merchant M-034 to gather additional details regarding the checkout process leading to the failure.",
+        "requiresHumanApproval": false,
         "riskLevel": "low"
       }
     ],
     "assumptions": [
-      "The affected merchant's configurations are consistent with the expected setup post-migration.",
-      "The incident is isolated to the specified merchant and may not be affecting other merchants at this time."
+      "The incident is isolated to a specific merchant, indicating it may not be a widespread platform issue.",
+      "The checkout failure is potentially linked to the payment solution as that is a common point of failure in transactions."
     ],
-    "uncertaintyNotes": "There may be multiple factors contributing to this incident, including potential user error or third-party service outages, which have not been confirmed due to the missing context."
+    "uncertaintyNotes": "There is a lack of detailed logs around the time of the incident to definitively pinpoint the exact cause. Additional information from the affected merchant may be required to clarify the situation.",
+    "performanceMetrics": {
+      "latencySeconds": 6.494,
+      "cpuTimeSeconds": 0.0,
+      "memoryDeltaMB": 0.01,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   },
   {
     "incidentId": "INC-043",
-    "rootCauseHypothesis": "The webhook may be missing due to incorrect configuration settings or a failure in the event trigger process on the headless architecture.",
-    "confidenceLevel": 0.7,
-    "recommendedActions": [
-      {
-        "actionType": "engineering",
-        "description": "Investigate the webhook configuration for the affected merchant and review the event trigger logs for errors during the incident time window.",
-        "requiresHumanApproval": true,
-        "riskLevel": "medium"
-      },
-      {
-        "actionType": "support",
-        "description": "Notify the affected merchant about the ongoing issue and provide them with an estimated resolution time.",
-        "requiresHumanApproval": false,
-        "riskLevel": "low"
-      }
-    ],
-    "assumptions": [
-      "The webhook configuration information is accessible.",
-      "The affected merchant's settings were not altered prior to the incident."
-    ],
-    "uncertaintyNotes": "There may be undiscovered factors affecting the webhook's functionality, such as external dependencies or network issues. The exact point of failure within the architecture is not fully verified."
+    "error": "LLM returned invalid JSON",
+    "rawResponse": "```json\n{\n  \"incidentId\": \"INC-043\",\n  \"rootCauseHypothesis\": \"The webhook may be missing due to configuration errors or an issue during the migration to headless architecture that could have led to improper setup of webhook endpoints for the affected merchant.\",\n  \"confidenceLevel\": 0.7,\n  \"recommendedActions\": [\n    {\n      \"actionType\": \"engineering\",\n      \"description\": \"Investigate the webhook configurations for the affected merchant M-050 and verify if the webhook endpoints are correctly set up and active.\",\n      \"requiresHumanApproval\": false,\n      \"riskLevel\": \"medium\"\n    },\n    {\n      \"actionType\": \"support\",\n      \"description\": \"Communicate with the affected merchant M-050 to inform them of the issue and gather any additional context or error messages they may have encountered.\",\n      \"requiresHumanApproval\": true,\n      \"riskLevel\": \"low\"\n    }\n  ],\n  \"assumptions\": [\n    \"The webhook was previously functional and did not experience any issues before the migration.\",\n    \"The incident only affects the specified merchant and no other merchants are impacted.\"\n  ],\n  \"uncertaintyNotes\": \"There may be additional underlying issues related to the migration process that have not yet been identified. The webhook configuration could also depend on external factors not captured in the incident data.\"\n}\n```",
+    "performanceMetrics": {
+      "latencySeconds": 5.291,
+      "cpuTimeSeconds": 0.016,
+      "memoryDeltaMB": 0.01,
+      "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
   }
 ]

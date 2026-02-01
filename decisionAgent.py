@@ -9,11 +9,18 @@ and proposes support, engineering, or documentation actions.
 # ---------------------------------------------------
 
 import json
+import time
 from typing import List, Dict
 from dotenv import load_dotenv
-
+import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
+
+# --- OPTIONAL PERFORMANCE IMPORTS (SAFE) ---
+try:
+    import psutil
+except ImportError:
+    psutil = None
 
 # ---------------------------------------------------
 # Environment Setup
@@ -30,9 +37,10 @@ llm = ChatOpenAI(model="gpt-4o-mini")
 # ---------------------------------------------------
 # File Paths
 # ---------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-INCIDENTS_FILE_PATH = "incidents.json"
-OUTPUT_FILE_PATH = "actionPlans.json"
+INCIDENTS_FILE_PATH = os.path.join(BASE_DIR, "data", "incidents.json")
+OUTPUT_FILE_PATH = os.path.join(BASE_DIR, "actionPlans.json")
 
 # ---------------------------------------------------
 # Helper Functions
@@ -103,20 +111,74 @@ def buildReasoningPrompt(incident: Dict) -> List:
         HumanMessage(content=humanPrompt)
     ]
 
+
 def reasonAboutIncident(incident: Dict) -> Dict:
     """Invoke LLM to reason about a single incident."""
+
+    # -------------------------------
+    # Performance Measurement (START)
+    # -------------------------------
+
+    startTime = time.time()
+
+    if psutil:
+        process = psutil.Process()
+        cpuBefore = process.cpu_times()
+        memBeforeMB = process.memory_info().rss / (1024 ** 2)
+    else:
+        cpuBefore = None
+        memBeforeMB = None
+
+    # -------------------------------
+    # Existing Logic (UNCHANGED)
+    # -------------------------------
+
     messages = buildReasoningPrompt(incident)
-    response = llm.invoke(messages) #searches for LLM based outputs for raised tokens
+    response = llm.invoke(messages)
 
     try:
-        return json.loads(response.content)
+        decision = json.loads(response.content)
     except json.JSONDecodeError:
-        # Fail safely with traceable output
-        return {
+        decision = {
             "incidentId": incident["incidentId"],
             "error": "LLM returned invalid JSON",
             "rawResponse": response.content
         }
+
+    # -------------------------------
+    # Performance Measurement (END)
+    # -------------------------------
+
+    endTime = time.time()
+    latencySeconds = round(endTime - startTime, 3)
+
+    if psutil and cpuBefore:
+        cpuAfter = process.cpu_times()
+        memAfterMB = process.memory_info().rss / (1024 ** 2)
+
+        cpuDeltaSeconds = round(
+            (cpuAfter.user + cpuAfter.system) -
+            (cpuBefore.user + cpuBefore.system),
+            3
+        )
+
+        memoryDeltaMB = round(memAfterMB - memBeforeMB, 2)
+    else:
+        cpuDeltaSeconds = None
+        memoryDeltaMB = None
+
+    # -------------------------------
+    # Attach Metrics (NON-DESTRUCTIVE)
+    # -------------------------------
+
+    decision["performanceMetrics"] = {
+        "latencySeconds": latencySeconds,
+        "cpuTimeSeconds": cpuDeltaSeconds,
+        "memoryDeltaMB": memoryDeltaMB,
+        "profilingNote": "Local CPU/RAM only. LLM inference executed remotely."
+    }
+
+    return decision
 
 
 # ---------------------------------------------------

@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-02-01 10:17:08",
+    "incident_id": "INC-005",
+    "decision": "REJECTED",
+    "notes": "Rejected AI plan"
+  },
+  {
+    "timestamp": "2026-02-01 10:17:06",
+    "incident_id": "INC-004",
+    "decision": "REJECTED",
+    "notes": "Rejected AI plan"
+  },
+  {
+    "timestamp": "2026-02-01 10:17:02",
+    "incident_id": "INC-003",
+    "decision": "APPROVED",
+    "notes": "Approved AI plan"
+  },
+  {
+    "timestamp": "2026-02-01 10:16:24",
+    "incident_id": "INC-002",
+    "decision": "APPROVED",
+    "notes": "Approved AI plan"
+  },
+  {
+    "timestamp": "2026-02-01 10:16:21",
+    "incident_id": "INC-001",
+    "decision": "APPROVED",
+    "notes": "Approved AI plan"
+  },
+  {
     "timestamp": "2026-02-01 09:16:57",
     "incident_id": "INC-008",
     "decision": "APPROVED",
