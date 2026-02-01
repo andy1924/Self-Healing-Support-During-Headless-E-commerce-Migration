@@ -1,5 +1,53 @@
 [
   {
+    "timestamp": "2026-02-01 09:16:57",
+    "incident_id": "INC-008",
+    "decision": "APPROVED",
+    "notes": "Approved 3 actions"
+  },
+  {
+    "timestamp": "2026-02-01 09:16:20",
+    "incident_id": "INC-007",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 09:15:51",
+    "incident_id": "INC-006",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 09:12:32",
+    "incident_id": "INC-005",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 09:08:43",
+    "incident_id": "INC-004",
+    "decision": "APPROVED",
+    "notes": "Approved 3 actions"
+  },
+  {
+    "timestamp": "2026-02-01 09:08:39",
+    "incident_id": "INC-003",
+    "decision": "REJECTED",
+    "notes": "Operator rejected AI proposal"
+  },
+  {
+    "timestamp": "2026-02-01 09:08:17",
+    "incident_id": "INC-002",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 09:07:30",
+    "incident_id": "INC-001",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
     "timestamp": "2026-02-01 03:46:45",
     "incident_id": "INC-005",
     "decision": "APPROVED",

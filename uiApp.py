@@ -43,6 +43,7 @@ TICKETS_FILE = os.path.join(DATA_DIR, "supportTickets.json")
 ACTION_PLANS_FILE = os.path.join(BASE_DIR, "actionPlans.json")
 EMAIL_OUTBOX_FILE = os.path.join(DATA_DIR, "emailOutbox.json")
 AUDIT_LOG_FILE = os.path.join(DATA_DIR, "auditLog.json")
+SENT_LOG_FILE = os.path.join(DATA_DIR, "sent_emails.log") # <--- Added Log Path
 
 
 # ---------------------------------------------------
@@ -57,6 +58,26 @@ def load_data(path: str) -> List[Dict]:
     except Exception:
         return []
 
+def load_text_logs(path: str) -> List[Dict]:
+    """Parses the pipe-separated text log file."""
+    if not os.path.exists(path):
+        return []
+    logs = []
+    try:
+        with open(path, "r") as f:
+            lines = f.readlines()
+            # Process in reverse to show newest first
+            for line in reversed(lines):
+                parts = line.strip().split(" | ")
+                if len(parts) >= 3:
+                    logs.append({
+                        "Timestamp": parts[0],
+                        "Status": parts[1],
+                        "Details": parts[2]
+                    })
+    except Exception:
+        return []
+    return logs
 
 def save_data(path: str, data: List[Dict]):
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -131,12 +152,14 @@ with st.sidebar:
     if st.button("Incident Queue", use_container_width=True): st.session_state.page = "incidents"
     if st.button("Ticket Desk", use_container_width=True): st.session_state.page = "tickets"
     if st.button("Audit Log", use_container_width=True): st.session_state.page = "audit"
+    if st.button("Sent Emails", use_container_width=True): st.session_state.page = "sent_emails" # <--- New Button
 
     st.markdown("---")
     with st.expander("System Paths (Debug)"):
         st.write(f"**Root:** `{BASE_DIR}`")
         st.write(f"**Data:** `{DATA_DIR}`")
         st.write(f"**Audit File:** `{AUDIT_LOG_FILE}`")
+        st.write(f"**Log File:** `{SENT_LOG_FILE}`")
 
 # ---------------------------------------------------
 # PAGE: DASHBOARD
@@ -262,3 +285,29 @@ elif st.session_state.page == "audit":
         st.dataframe(pd.DataFrame(logs), use_container_width=True, hide_index=True)
     else:
         st.info("No audit history found.")
+
+# ---------------------------------------------------
+# PAGE: SENT EMAILS (NEW)
+# ---------------------------------------------------
+elif st.session_state.page == "sent_emails":
+    st.title("Sent Email History")
+
+    # Add refresh button to pull latest data from file
+    if st.button("Refresh Log"):
+        st.rerun()
+
+    logs = load_text_logs(SENT_LOG_FILE)
+    if logs:
+        # Display as a clean table
+        st.dataframe(
+            pd.DataFrame(logs),
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Timestamp": "Time Sent",
+                "Status": "Status",
+                "Details": "Email Subject / ID"
+            }
+        )
+    else:
+        st.info("No sent emails recorded yet.")
