@@ -5,7 +5,8 @@
     "issueType": "latencyIssue",
     "description": "Checkout loading very slowly",
     "timestamp": "2026-01-31T16:29:24.272136",
-    "channel": "email"
+    "channel": "email",
+    "status": "closed"
   },
   {
     "ticketId": "TCK-1001",

@@ -33,18 +33,16 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # ---------------------------------------------------
-# 2. DYNAMIC PATHS (The Fix)
+# 2. DYNAMIC PATHS
 # ---------------------------------------------------
-# This finds the folder where uiApp.py is currently sitting
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
-# Construct paths relative to the script location
 INCIDENTS_FILE = os.path.join(DATA_DIR, "incidents.json")
 TICKETS_FILE = os.path.join(DATA_DIR, "supportTickets.json")
-ACTION_PLANS_FILE = os.path.join(BASE_DIR, "actionPlans.json")  # In Root
-EMAIL_OUTBOX_FILE = os.path.join(DATA_DIR, "emailOutbox.json")  # In Data
-AUDIT_LOG_FILE = os.path.join(DATA_DIR, "auditLog.json")  # In Data
+ACTION_PLANS_FILE = os.path.join(BASE_DIR, "actionPlans.json")
+EMAIL_OUTBOX_FILE = os.path.join(DATA_DIR, "emailOutbox.json")
+AUDIT_LOG_FILE = os.path.join(DATA_DIR, "auditLog.json")
 
 
 # ---------------------------------------------------
@@ -61,10 +59,7 @@ def load_data(path: str) -> List[Dict]:
 
 
 def save_data(path: str, data: List[Dict]):
-    """Creates the folder and saves the file."""
-    # Ensure the folder exists (e.g., 'data')
     os.makedirs(os.path.dirname(path), exist_ok=True)
-
     with open(path, "w") as f:
         json.dump(data, f, indent=2)
 
@@ -102,7 +97,6 @@ def find_plan(incident_id: str, lookup: Dict) -> Dict:
 
 
 def log_decision(iid, decision, notes):
-    """Loads audit log, adds new entry, and saves it."""
     log = load_data(AUDIT_LOG_FILE)
     entry = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -129,17 +123,17 @@ plansByIncident = build_plan_lookup(actionPlans)
 # 5. SIDEBAR
 # ---------------------------------------------------
 with st.sidebar:
-    st.title("🛡️ Support Ops")
-    st.caption("Status: **Online**")
+    st.title("Support Ops")
+    st.caption("Status: Online")
     st.markdown("---")
 
-    if st.button("📊 Dashboard", use_container_width=True): st.session_state.page = "dashboard"
-    if st.button("🚨 Incident Queue", use_container_width=True): st.session_state.page = "incidents"
-    if st.button("🎫 Ticket Desk", use_container_width=True): st.session_state.page = "tickets"
-    if st.button("📜 Audit Log", use_container_width=True): st.session_state.page = "audit"
+    if st.button("Dashboard", use_container_width=True): st.session_state.page = "dashboard"
+    if st.button("Incident Queue", use_container_width=True): st.session_state.page = "incidents"
+    if st.button("Ticket Desk", use_container_width=True): st.session_state.page = "tickets"
+    if st.button("Audit Log", use_container_width=True): st.session_state.page = "audit"
 
     st.markdown("---")
-    with st.expander("🛠 System Paths (Debug)"):
+    with st.expander("System Paths (Debug)"):
         st.write(f"**Root:** `{BASE_DIR}`")
         st.write(f"**Data:** `{DATA_DIR}`")
         st.write(f"**Audit File:** `{AUDIT_LOG_FILE}`")
@@ -161,7 +155,7 @@ elif st.session_state.page == "incidents":
     if not incidents:
         st.info("No incidents found.")
     elif st.session_state.incident_idx >= len(incidents):
-        st.success("🎉 All incidents reviewed!")
+        st.success("All incidents reviewed!")
         if st.button("Reset Queue"):
             st.session_state.incident_idx = 0
             st.rerun()
@@ -180,7 +174,7 @@ elif st.session_state.page == "incidents":
             st.write(f"**Impact:** {len(curr.get('affectedMerchants', []))} Merchants")
 
             if not plan:
-                st.error("⚠️ No Action Plan matched.")
+                st.error("No Action Plan matched.")
 
         with c2:
             st.markdown("### AI Diagnosis")
@@ -206,11 +200,11 @@ elif st.session_state.page == "incidents":
 
         st.markdown("---")
         cy, cn = st.columns(2)
-        if cy.button("✅ Approve & Next", use_container_width=True):
+        if cy.button("Approve & Next", use_container_width=True):
             log_decision(iid_raw, "APPROVED", f"Approved {len(actions)} actions")
             st.session_state.incident_idx += 1
             st.rerun()
-        if cn.button("❌ Reject & Next", use_container_width=True):
+        if cn.button("Reject & Next", use_container_width=True):
             log_decision(iid_raw, "REJECTED", "Operator rejected AI proposal")
             st.session_state.incident_idx += 1
             st.rerun()
@@ -219,7 +213,7 @@ elif st.session_state.page == "incidents":
 # PAGE: TICKETS
 # ---------------------------------------------------
 elif st.session_state.page == "tickets":
-    st.title("🎫 Ticket Desk")
+    st.title("Ticket Desk")
     open_tickets = [t for t in tickets if t.get("status", "open") == "open"]
 
     if not open_tickets: st.info("No open tickets.")
@@ -228,7 +222,7 @@ elif st.session_state.page == "tickets":
         mid = t.get("merchantId", "Unknown")
         issue = t.get("issueType", "General")
 
-        with st.expander(f"📌 {issue} | Merchant: {mid}"):
+        with st.expander(f"{issue} | Merchant: {mid}"):
             c1, c2 = st.columns([1, 2])
             with c1:
                 st.write(f"**ID:** {tid} | **Sev:** {t.get('severity', 'Normal')}")
@@ -237,7 +231,6 @@ elif st.session_state.page == "tickets":
                     save_data(TICKETS_FILE, tickets)
                     st.rerun()
             with c2:
-                # Draft Logic
                 draft = f"Dear Merchant ({mid}),\n\nSubject: Update on {issue}\n\n"
                 if "login" in str(issue).lower():
                     draft += "We have reset your session."
@@ -263,7 +256,7 @@ elif st.session_state.page == "tickets":
 # PAGE: AUDIT
 # ---------------------------------------------------
 elif st.session_state.page == "audit":
-    st.title("📜 Audit Log")
+    st.title("Audit Log")
     logs = load_data(AUDIT_LOG_FILE)
     if logs:
         st.dataframe(pd.DataFrame(logs), use_container_width=True, hide_index=True)

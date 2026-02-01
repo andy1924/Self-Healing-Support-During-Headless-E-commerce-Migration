@@ -1,0 +1,348 @@
+[
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-001] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-001\nIssue Type        : checkoutFailure\nAffected Merchants: M-049, M-050\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.450684"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-002] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-002\nIssue Type        : latencyIssue\nAffected Merchants: M-005, M-008, M-028\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.451962"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-003] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-003\nIssue Type        : configError\nAffected Merchants: M-030, M-012, M-028\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.457116"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-004] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-004\nIssue Type        : webhookMissing\nAffected Merchants: M-009, M-013, M-035, M-028\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.460162"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-005] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-005\nIssue Type        : apiError\nAffected Merchants: M-026, M-028\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.462002"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-006] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-006\nIssue Type        : latencyIssue\nAffected Merchants: M-040, M-039, M-004\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.465525"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-007] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-007\nIssue Type        : checkoutFailure\nAffected Merchants: M-020, M-017\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.467081"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-008] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-008\nIssue Type        : apiError\nAffected Merchants: M-045, M-015, M-036\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.469113"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-009] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-009\nIssue Type        : configError\nAffected Merchants: M-022, M-016\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.471026"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-010] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-010\nIssue Type        : webhookMissing\nAffected Merchants: M-020, M-046, M-024\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.472666"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-011] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-011\nIssue Type        : configError\nAffected Merchants: M-009, M-015\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.474747"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-012] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-012\nIssue Type        : latencyIssue\nAffected Merchants: M-041, M-008\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.476247"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-013] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-013\nIssue Type        : apiError\nAffected Merchants: M-048, M-031, M-045, M-009\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.479667"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-014] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-014\nIssue Type        : webhookMissing\nAffected Merchants: M-023, M-046\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.482430"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-015] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-015\nIssue Type        : configError\nAffected Merchants: M-018\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.484121"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-016] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-016\nIssue Type        : apiError\nAffected Merchants: M-048, M-021\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.486473"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-017] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-017\nIssue Type        : checkoutFailure\nAffected Merchants: M-011, M-043, M-018\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.488120"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-018] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-018\nIssue Type        : webhookMissing\nAffected Merchants: M-030, M-001\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.490544"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-019] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-019\nIssue Type        : latencyIssue\nAffected Merchants: M-043, M-036\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.493359"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-020] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-020\nIssue Type        : configError\nAffected Merchants: M-020, M-027, M-017\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.495166"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-021] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-021\nIssue Type        : checkoutFailure\nAffected Merchants: M-033, M-045, M-024\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.498458"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-022] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-022\nIssue Type        : apiError\nAffected Merchants: M-044, M-002\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.501574"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-023] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-023\nIssue Type        : webhookMissing\nAffected Merchants: M-048, M-045\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.504482"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-024] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-024\nIssue Type        : latencyIssue\nAffected Merchants: M-023, M-040, M-002, M-042\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.506836"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-025] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-025\nIssue Type        : checkoutFailure\nAffected Merchants: M-040, M-050, M-001\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.509640"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-026] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-026\nIssue Type        : apiError\nAffected Merchants: M-003, M-046, M-029, M-016\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.512946"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-027] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-027\nIssue Type        : webhookMissing\nAffected Merchants: M-023, M-009, M-016\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.515964"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-028] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-028\nIssue Type        : configError\nAffected Merchants: M-001, M-045, M-030\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.519099"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-029] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-029\nIssue Type        : latencyIssue\nAffected Merchants: M-050, M-014, M-038, M-012\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.522299"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-030] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-030\nIssue Type        : webhookMissing\nAffected Merchants: M-041, M-022, M-045\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.525593"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-031] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-031\nIssue Type        : apiError\nAffected Merchants: M-005, M-035\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.528214"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-032] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-032\nIssue Type        : checkoutFailure\nAffected Merchants: M-020, M-031, M-008, M-028\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.532934"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-033] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-033\nIssue Type        : latencyIssue\nAffected Merchants: M-027, M-009, M-026, M-024\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.535516"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-034] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-034\nIssue Type        : configError\nAffected Merchants: M-020, M-027, M-011\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.538052"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-035] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-035\nIssue Type        : apiError\nAffected Merchants: M-017, M-022, M-044\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.540679"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-036] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-036\nIssue Type        : latencyIssue\nAffected Merchants: M-005, M-016, M-047\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.542795"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-037] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-037\nIssue Type        : checkoutFailure\nAffected Merchants: M-003, M-002, M-013\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.545428"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-038] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-038\nIssue Type        : webhookMissing\nAffected Merchants: M-005, M-035, M-018, M-028\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.547737"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-039] apiError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-039\nIssue Type        : apiError\nAffected Merchants: M-049, M-016, M-017, M-023, M-044\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.550531"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-040] latencyIssue",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-040\nIssue Type        : latencyIssue\nAffected Merchants: M-020, M-038\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.553119"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-041] configError",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-041\nIssue Type        : configError\nAffected Merchants: M-009, M-035, M-013\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.555873"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-042] checkoutFailure",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-042\nIssue Type        : checkoutFailure\nAffected Merchants: M-034\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.558251"
+  },
+  {
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-043] webhookMissing",
+    "body": "Hello Support Team,\n\nA new incident has been detected in the system.\n\nIncident ID       : INC-043\nIssue Type        : webhookMissing\nAffected Merchants: M-050\nStatus            : open\n\nPlease take the necessary action.\n\nRegards,\nAutomated Support System",
+    "status": "skipped_not_approved",
+    "created_at": "2026-02-01T03:18:53.561044"
+  },
+  {
+    "incident_id": "INC-001",
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-001] Remediation Approved: checkoutFailure",
+    "body": "ACTION APPROVED for Incident INC-001.\n\nIssue: checkoutFailure\nStatus: open\n\nThe system has received operator approval and is executing the resolution plan.",
+    "status": "sent",
+    "created_at": "2026-02-01T03:44:08.856163",
+    "sent_at": "2026-02-01T03:44:12.602712"
+  },
+  {
+    "incident_id": "INC-002",
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-002] Remediation Approved: latencyIssue",
+    "body": "ACTION APPROVED for Incident INC-002.\n\nIssue: latencyIssue\nStatus: open\n\nThe system has received operator approval and is executing the resolution plan.",
+    "status": "sent",
+    "created_at": "2026-02-01T03:44:08.859203",
+    "sent_at": "2026-02-01T03:44:16.097502"
+  },
+  {
+    "incident_id": "INC-003",
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-003] Remediation Approved: configError",
+    "body": "ACTION APPROVED for Incident INC-003.\n\nIssue: configError\nStatus: open\n\nThe system has received operator approval and is executing the resolution plan.",
+    "status": "sent",
+    "created_at": "2026-02-01T03:44:08.862653",
+    "sent_at": "2026-02-01T03:44:19.463075"
+  },
+  {
+    "incident_id": "INC-004",
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-004] Remediation Approved: webhookMissing",
+    "body": "ACTION APPROVED for Incident INC-004.\n\nIssue: webhookMissing\nStatus: open\n\nThe system has received operator approval and is executing the resolution plan.",
+    "status": "sent",
+    "created_at": "2026-02-01T03:46:20.320873",
+    "sent_at": "2026-02-01T03:46:23.675460"
+  },
+  {
+    "incident_id": "INC-005",
+    "to": "reciever28@gmail.com",
+    "subject": "[INCIDENT INC-005] Remediation Approved: apiError",
+    "body": "ACTION APPROVED for Incident INC-005.\n\nIssue: apiError\nStatus: open\n\nThe system has received operator approval and is executing the resolution plan.",
+    "status": "sent",
+    "created_at": "2026-02-01T03:46:53.697485",
+    "sent_at": "2026-02-01T03:46:57.160780"
+  }
+]

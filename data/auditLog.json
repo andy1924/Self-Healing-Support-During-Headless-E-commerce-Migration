@@ -1,5 +1,35 @@
 [
   {
+    "timestamp": "2026-02-01 03:46:45",
+    "incident_id": "INC-005",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 03:46:18",
+    "incident_id": "INC-004",
+    "decision": "APPROVED",
+    "notes": "Approved 3 actions"
+  },
+  {
+    "timestamp": "2026-02-01 03:40:46",
+    "incident_id": "INC-003",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 03:36:00",
+    "incident_id": "INC-002",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
+    "timestamp": "2026-02-01 03:34:41",
+    "incident_id": "INC-001",
+    "decision": "APPROVED",
+    "notes": "Approved 2 actions"
+  },
+  {
     "timestamp": "2026-02-01 02:39:46",
     "incident_id": "INC-001",
     "decision": "APPROVED",
